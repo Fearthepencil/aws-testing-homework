@@ -1,0 +1,1282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Cases - Amazon QA Homework</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div>
+                <h1>Test Cases - Amazon Website Testing</h1>
+                <p class="subtitle">Detailed Test Cases in BDD Format</p>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="test-plan.html">Test Plan</a></li>
+                <li><a href="test-cases.html" class="active">Test Cases</a></li>
+                <li><a href="bug-report.html">Bug Report</a></li>
+                <li><a href="test-data.html">Test Data</a></li>
+                <li><a href="exploratory-sessions.html">Exploratory Testing</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <main>
+            <h1>Test Cases</h1>
+            
+            <div class="card">
+                <p>This document contains 18 test cases covering Amazon's product search functionality. All test cases are written in BDD (Behavior-Driven Development) Given-When-Then format for clarity and stakeholder communication.</p>
+                
+                <h3>Test Case Summary</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Category</th>
+                            <th>Automated</th>
+                            <th>Manual</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Core Functional</td>
+                            <td>6</td>
+                            <td>2</td>
+                            <td>8</td>
+                        </tr>
+                        <tr>
+                            <td>Price Calculation</td>
+                            <td>4</td>
+                            <td>1</td>
+                            <td>5</td>
+                        </tr>
+                        <tr>
+                            <td>Quality/Usability</td>
+                            <td>0</td>
+                            <td>5</td>
+                            <td>5</td>
+                        </tr>
+                        <tr style="font-weight: 600;">
+                            <td>TOTAL</td>
+                            <td>10</td>
+                            <td>8</td>
+                            <td>18</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>Quick Navigation</h2>
+            <div class="card">
+                <ul>
+                    <li><a href="#core-functional">Core Functional Tests (TC-001 to TC-008)</a></li>
+                    <li><a href="#price-calculation">Price Calculation Tests (TC-009 to TC-013)</a></li>
+                    <li><a href="#quality-usability">Quality & Usability Tests (TC-014 to TC-021)</a></li>
+                </ul>
+            </div>
+
+            <!-- CORE FUNCTIONAL TESTS -->
+            <h2 id="core-functional">Core Functional Tests</h2>
+
+            <!-- TC-001 -->
+            <div class="test-case">
+                <div class="test-case-header">
+                    <span class="test-case-id">TC-001: Valid Product Search Returns Results</span>
+                    <div>
+                        <span class="badge badge-automated">Automated</span>
+                        <span class="badge badge-high">High Priority</span>
+                    </div>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Test Objective</h4>
+                    <p>Verify that users can successfully search for products and receive relevant results.</p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Preconditions</h4>
+                    <p>Amazon homepage is accessible via Chrome browser</p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Test Data</h4>
+                    <p>Search term: "wireless mouse"</p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Given</h4>
+                    <p>User is on Amazon homepage (https://www.amazon.com)</p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>When</h4>
+                    <p>User enters "wireless mouse" in the search box and clicks the search button</p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Then</h4>
+                    <p>
+                        • Search results page is displayed<br>
+                        • Page contains product listings<br>
+                        • At least 10 products are shown<br>
+                        • Products are relevant to "wireless mouse"
+                    </p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Test Technique</h4>
+                    <p>Equivalence Partitioning (valid search input)</p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Risk Coverage</h4>
+                    <p>PR-01: Search returns no results for valid queries (HIGH risk)</p>
+                </div>
+            </div>
+
+            <!-- TC-002 -->
+            <div class="test-case">
+                <div class="test-case-header">
+                    <span class="test-case-id">TC-002: Search with Multiple Keywords</span>
+                    <div>
+                        <span class="badge badge-automated">Automated</span>
+                        <span class="badge badge-high">High Priority</span>
+                    </div>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Test Objective</h4>
+                    <p>Verify that search handles multiple keywords correctly and returns relevant results.</p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Preconditions</h4>
+                    <p>Amazon homepage is accessible</p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Test Data</h4>
+                    <p>Search term: "gaming keyboard rgb"</p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Given</h4>
+                    <p>User is on Amazon homepage</p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>When</h4>
+                    <p>User searches for "gaming keyboard rgb" (three keywords)</p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Then</h4>
+                    <p>
+                        • Search results page displays products<br>
+                        • Products are gaming keyboards with RGB lighting<br>
+                        • Product titles contain relevant keywords<br>
+                        • Results are ordered by relevance
+                    </p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Test Technique</h4>
+                    <p>Equivalence Partitioning (multiple keyword search)</p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Risk Coverage</h4>
+                    <p>PR-06: Poor search result relevance (MEDIUM risk)</p>
+                </div>
+            </div>
+
+            <!-- TC-003 -->
+            <div class="test-case">
+                <div class="test-case-header">
+                    <span class="test-case-id">TC-003: Search with Special Characters</span>
+                    <div>
+                        <span class="badge badge-manual">Manual</span>
+                        <span class="badge badge-medium">Medium Priority</span>
+                    </div>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Test Objective</h4>
+                    <p>Verify that search handles special characters gracefully without errors.</p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Preconditions</h4>
+                    <p>Amazon homepage is accessible</p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Test Data</h4>
+                    <p>Search terms: "!@#$%", "usb-c cable", "32\" monitor"</p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Given</h4>
+                    <p>User is on Amazon homepage</p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>When</h4>
+                    <p>User enters special characters in search box and submits</p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Then</h4>
+                    <p>
+                        • No error messages are displayed<br>
+                        • Search completes without crashing<br>
+                        • Either shows "no results" or filters special characters<br>
+                        • Valid special characters (like "-" and '"') work correctly
+                    </p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Test Technique</h4>
+                    <p>Error Guessing, Negative Testing</p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Risk Coverage</h4>
+                    <p>PR-05: Search with special characters causes errors (LOW risk)</p>
+                </div>
+            </div>
+
+            <!-- TC-004 -->
+            <div class="test-case">
+                <div class="test-case-header">
+                    <span class="test-case-id">TC-004: Empty Search Validation</span>
+                    <div>
+                        <span class="badge badge-manual">Manual</span>
+                        <span class="badge badge-medium">Medium Priority</span>
+                    </div>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Test Objective</h4>
+                    <p>Verify system behavior when user attempts to search with empty input.</p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Preconditions</h4>
+                    <p>Amazon homepage is accessible</p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Test Data</h4>
+                    <p>Empty string, spaces only</p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Given</h4>
+                    <p>User is on Amazon homepage with empty search box</p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>When</h4>
+                    <p>User clicks search button without entering any text</p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Then</h4>
+                    <p>
+                        • Search button is disabled OR<br>
+                        • Validation message is displayed OR<br>
+                        • User remains on homepage OR<br>
+                        • Shows all products/categories page
+                    </p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Test Technique</h4>
+                    <p>Boundary Value Analysis (empty input), Negative Testing</p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Risk Coverage</h4>
+                    <p>PR-05: Input validation issues (LOW risk)</p>
+                </div>
+            </div>
+
+            <!-- TC-005 -->
+            <div class="test-case">
+                <div class="test-case-header">
+                    <span class="test-case-id">TC-005: Pagination - Navigate to Page 2</span>
+                    <div>
+                        <span class="badge badge-automated">Automated</span>
+                        <span class="badge badge-high">High Priority</span>
+                    </div>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Test Objective</h4>
+                    <p>Verify that users can navigate to the second page of search results.</p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Preconditions</h4>
+                    <p>User has performed a search with multiple pages of results</p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Test Data</h4>
+                    <p>Search term: "wireless mouse"</p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Given</h4>
+                    <p>User is on page 1 of search results for "wireless mouse"</p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>When</h4>
+                    <p>User clicks "Next" button or page "2" link</p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Then</h4>
+                    <p>
+                        • Page 2 of search results is displayed<br>
+                        • URL contains page parameter (e.g., page=2)<br>
+                        • Page indicator shows "2" as current page<br>
+                        • Different products are shown than page 1<br>
+                        • Search term is preserved in search box
+                    </p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Test Technique</h4>
+                    <p>State Transition Testing (page 1 → page 2)</p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Risk Coverage</h4>
+                    <p>PR-02: Pagination fails to navigate (MEDIUM risk)</p>
+                </div>
+            </div>
+
+            <!-- TC-006 -->
+            <div class="test-case">
+                <div class="test-case-header">
+                    <span class="test-case-id">TC-006: Pagination - Navigate to Page 3</span>
+                    <div>
+                        <span class="badge badge-automated">Automated</span>
+                        <span class="badge badge-high">High Priority</span>
+                    </div>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Test Objective</h4>
+                    <p>Verify that users can navigate to the third page of search results.</p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Preconditions</h4>
+                    <p>User has performed a search with multiple pages of results</p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Test Data</h4>
+                    <p>Search term: "wireless mouse"</p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Given</h4>
+                    <p>User is on page 1 of search results</p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>When</h4>
+                    <p>User navigates to page 2, then to page 3</p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Then</h4>
+                    <p>
+                        • Page 3 of search results is displayed<br>
+                        • URL contains page=3 parameter<br>
+                        • Page indicator shows "3" as current page<br>
+                        • Products differ from pages 1 and 2<br>
+                        • "Previous" button is available
+                    </p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Test Technique</h4>
+                    <p>State Transition Testing (page 1 → page 2 → page 3)</p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Risk Coverage</h4>
+                    <p>PR-02: Pagination fails to navigate (MEDIUM risk)</p>
+                </div>
+            </div>
+
+            <!-- TC-007 -->
+            <div class="test-case">
+                <div class="test-case-header">
+                    <span class="test-case-id">TC-007: Product Card Displays Required Information</span>
+                    <div>
+                        <span class="badge badge-automated">Automated</span>
+                        <span class="badge badge-high">High Priority</span>
+                    </div>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Test Objective</h4>
+                    <p>Verify that each product card displays all required information.</p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Preconditions</h4>
+                    <p>User has performed a search with results</p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Test Data</h4>
+                    <p>Search term: "wireless mouse"</p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Given</h4>
+                    <p>User is viewing search results page</p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>When</h4>
+                    <p>User examines product cards on the results page</p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Then</h4>
+                    <p>
+                        Each product card displays:<br>
+                        • Product title (clickable link)<br>
+                        • Product image<br>
+                        • Price (or "Currently unavailable")<br>
+                        • Rating (stars) and review count<br>
+                        • Prime badge (if applicable)<br>
+                        • Delivery information
+                    </p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Test Technique</h4>
+                    <p>Checklist-Based Testing</p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Risk Coverage</h4>
+                    <p>PR-04: Missing product information (MEDIUM risk)</p>
+                </div>
+            </div>
+
+            <!-- TC-008 -->
+            <div class="test-case">
+                <div class="test-case-header">
+                    <span class="test-case-id">TC-008: Click Product Opens Detail Page</span>
+                    <div>
+                        <span class="badge badge-automated">Automated</span>
+                        <span class="badge badge-high">High Priority</span>
+                    </div>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Test Objective</h4>
+                    <p>Verify that clicking a product from search results opens the product detail page.</p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Preconditions</h4>
+                    <p>User has performed a search with results</p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Test Data</h4>
+                    <p>Search term: "wireless mouse"</p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Given</h4>
+                    <p>User is viewing search results page with multiple products</p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>When</h4>
+                    <p>User clicks on the first product title or image</p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Then</h4>
+                    <p>
+                        • Product detail page opens<br>
+                        • Page displays full product information<br>
+                        • Product title matches clicked product<br>
+                        • "Add to Cart" button is visible<br>
+                        • Product images are displayed<br>
+                        • Price and availability are shown
+                    </p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Test Technique</h4>
+                    <p>Scenario-Based Testing (user journey)</p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Risk Coverage</h4>
+                    <p>PR-01: Core navigation functionality (HIGH risk)</p>
+                </div>
+            </div>
+
+            <!-- PRICE CALCULATION TESTS -->
+            <h2 id="price-calculation">Price Calculation Tests</h2>
+
+            <!-- TC-009 -->
+            <div class="test-case">
+                <div class="test-case-header">
+                    <span class="test-case-id">TC-009: Calculate Average Price on Page 1</span>
+                    <div>
+                        <span class="badge badge-automated">Automated</span>
+                        <span class="badge badge-high">High Priority</span>
+                    </div>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Test Objective</h4>
+                    <p>Extract all product prices from page 1 and calculate the average price.</p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Preconditions</h4>
+                    <p>User has performed a search with results</p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Test Data</h4>
+                    <p>Search term: "wireless mouse"</p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Given</h4>
+                    <p>User is on page 1 of search results</p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>When</h4>
+                    <p>System extracts all visible product prices from the page</p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Then</h4>
+                    <p>
+                        • All prices are extracted successfully<br>
+                        • Average price is calculated correctly<br>
+                        • Result is logged to console in format:<br>
+                        &nbsp;&nbsp;"PAGE 1 - Products: X, Average: $Y.ZZ"<br>
+                        • Average is greater than $0.00
+                    </p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Test Technique</h4>
+                    <p>Data-driven Testing, Calculation Validation</p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Risk Coverage</h4>
+                    <p>PR-03: Product prices displayed incorrectly (HIGH risk)</p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Note</h4>
+                    <p>This test fulfills the homework requirement to calculate average prices.</p>
+                </div>
+            </div>
+
+            <!-- TC-010 -->
+            <div class="test-case">
+                <div class="test-case-header">
+                    <span class="test-case-id">TC-010: Calculate Average Price on Page 2</span>
+                    <div>
+                        <span class="badge badge-automated">Automated</span>
+                        <span class="badge badge-high">High Priority</span>
+                    </div>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Test Objective</h4>
+                    <p>Extract all product prices from page 2 and calculate the average price.</p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Preconditions</h4>
+                    <p>User has navigated to page 2 of search results</p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Test Data</h4>
+                    <p>Search term: "wireless mouse"</p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Given</h4>
+                    <p>User has navigated to page 2 of search results</p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>When</h4>
+                    <p>System extracts all visible product prices from page 2</p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Then</h4>
+                    <p>
+                        • All prices from page 2 are extracted<br>
+                        • Average price for page 2 is calculated<br>
+                        • Result is logged to console<br>
+                        • Average may differ from page 1
+                    </p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Test Technique</h4>
+                    <p>Data-driven Testing, Calculation Validation</p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Risk Coverage</h4>
+                    <p>PR-03: Product prices displayed incorrectly (HIGH risk)</p>
+                </div>
+            </div>
+
+            <!-- TC-011 -->
+            <div class="test-case">
+                <div class="test-case-header">
+                    <span class="test-case-id">TC-011: Calculate Average Price on Page 3</span>
+                    <div>
+                        <span class="badge badge-automated">Automated</span>
+                        <span class="badge badge-high">High Priority</span>
+                    </div>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Test Objective</h4>
+                    <p>Extract all product prices from page 3 and calculate the average price.</p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Preconditions</h4>
+                    <p>User has navigated to page 3 of search results</p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Test Data</h4>
+                    <p>Search term: "wireless mouse"</p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Given</h4>
+                    <p>User has navigated to page 3 of search results</p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>When</h4>
+                    <p>System extracts all visible product prices from page 3</p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Then</h4>
+                    <p>
+                        • All prices from page 3 are extracted<br>
+                        • Average price for page 3 is calculated<br>
+                        • Result is logged to console<br>
+                        • Combined summary shows all 3 page averages
+                    </p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Test Technique</h4>
+                    <p>Data-driven Testing, Calculation Validation</p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Risk Coverage</h4>
+                    <p>PR-03: Product prices displayed incorrectly (HIGH risk)</p>
+                </div>
+            </div>
+
+            <!-- TC-012 -->
+            <div class="test-case">
+                <div class="test-case-header">
+                    <span class="test-case-id">TC-012: Handle Products Without Prices</span>
+                    <div>
+                        <span class="badge badge-automated">Automated</span>
+                        <span class="badge badge-medium">Medium Priority</span>
+                    </div>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Test Objective</h4>
+                    <p>Verify that price calculation handles products without displayed prices correctly.</p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Preconditions</h4>
+                    <p>Search results contain products without prices (e.g., "Currently unavailable")</p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Test Data</h4>
+                    <p>Search term: "wireless mouse"</p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Given</h4>
+                    <p>Search results page contains some products without prices</p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>When</h4>
+                    <p>System attempts to extract prices from all products</p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Then</h4>
+                    <p>
+                        • Products without prices are skipped gracefully<br>
+                        • No errors or exceptions are thrown<br>
+                        • Average is calculated only from products with prices<br>
+                        • Log indicates number of products with prices vs. total
+                    </p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Test Technique</h4>
+                    <p>Error Guessing, Exception Handling Testing</p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Risk Coverage</h4>
+                    <p>PR-03: Price extraction errors (HIGH risk)</p>
+                </div>
+            </div>
+
+            <!-- TC-013 -->
+            <div class="test-case">
+                <div class="test-case-header">
+                    <span class="test-case-id">TC-013: Handle Price Ranges</span>
+                    <div>
+                        <span class="badge badge-manual">Manual</span>
+                        <span class="badge badge-medium">Medium Priority</span>
+                    </div>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Test Objective</h4>
+                    <p>Verify visual display and handling of products with price ranges.</p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Preconditions</h4>
+                    <p>Search results contain products with price ranges</p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Test Data</h4>
+                    <p>Search for products with variations (e.g., "laptop", "phone case")</p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Given</h4>
+                    <p>User is viewing search results with products that have multiple price points</p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>When</h4>
+                    <p>User observes products displaying price ranges (e.g., "$19.99 - $29.99")</p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Then</h4>
+                    <p>
+                        • Price range is clearly formatted<br>
+                        • Range uses consistent format (e.g., "$X.XX - $Y.YY")<br>
+                        • Lower and upper bounds are visible<br>
+                        • Clicking product shows price details on detail page
+                    </p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Test Technique</h4>
+                    <p>Decision Table Testing (price display logic)</p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Risk Coverage</h4>
+                    <p>PR-03: Price display inconsistencies (HIGH risk)</p>
+                </div>
+            </div>
+
+            <!-- QUALITY & USABILITY TESTS -->
+            <h2 id="quality-usability">Quality & Usability Tests</h2>
+
+            <!-- TC-014 -->
+            <div class="test-case">
+                <div class="test-case-header">
+                    <span class="test-case-id">TC-014: Results Relevance Check</span>
+                    <div>
+                        <span class="badge badge-manual">Manual</span>
+                        <span class="badge badge-high">High Priority</span>
+                    </div>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Test Objective</h4>
+                    <p>Verify that search results are relevant to the search query.</p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Preconditions</h4>
+                    <p>Amazon homepage is accessible</p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Test Data</h4>
+                    <p>Search term: "wireless mouse"</p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Given</h4>
+                    <p>User has searched for "wireless mouse"</p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>When</h4>
+                    <p>User reviews the first 10 search results</p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Then</h4>
+                    <p>
+                        • At least 8 out of 10 results are wireless mice<br>
+                        • Product titles contain "wireless" or "Bluetooth"<br>
+                        • Product titles contain "mouse" or "mice"<br>
+                        • Irrelevant products (keyboards, cables) are minimal<br>
+                        • Sponsored results are clearly labeled
+                    </p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Test Technique</h4>
+                    <p>Exploratory Testing, Manual Inspection</p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Risk Coverage</h4>
+                    <p>PR-06: Poor search result relevance (MEDIUM risk)</p>
+                </div>
+            </div>
+
+            <!-- TC-018 -->
+            <div class="test-case">
+                <div class="test-case-header">
+                    <span class="test-case-id">TC-018: Search Suggestions/Autocomplete</span>
+                    <div>
+                        <span class="badge badge-manual">Manual</span>
+                        <span class="badge badge-medium">Medium Priority</span>
+                    </div>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Test Objective</h4>
+                    <p>Verify that search autocomplete provides relevant suggestions.</p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Preconditions</h4>
+                    <p>Amazon homepage is accessible</p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Test Data</h4>
+                    <p>Partial search terms: "wire", "gam", "lapt"</p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Given</h4>
+                    <p>User is on Amazon homepage with focus on search box</p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>When</h4>
+                    <p>User types partial search term (e.g., "wire")</p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Then</h4>
+                    <p>
+                        • Dropdown with suggestions appears<br>
+                        • Suggestions are relevant to typed text<br>
+                        • Suggestions update as user types<br>
+                        • User can click suggestion to search<br>
+                        • User can use arrow keys to navigate suggestions
+                    </p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Test Technique</h4>
+                    <p>Exploratory Testing, Usability Testing</p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Risk Coverage</h4>
+                    <p>Usability - Search assistance (MEDIUM risk)</p>
+                </div>
+            </div>
+
+            <!-- TC-019 -->
+            <div class="test-case">
+                <div class="test-case-header">
+                    <span class="test-case-id">TC-019: Very Long Search String</span>
+                    <div>
+                        <span class="badge badge-manual">Manual</span>
+                        <span class="badge badge-low">Low Priority</span>
+                    </div>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Test Objective</h4>
+                    <p>Verify system behavior with extremely long search strings.</p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Preconditions</h4>
+                    <p>Amazon homepage is accessible</p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Test Data</h4>
+                    <p>Search string: 200+ character string</p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Given</h4>
+                    <p>User is on Amazon homepage</p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>When</h4>
+                    <p>User enters a very long search string (>100 characters) and submits</p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Then</h4>
+                    <p>
+                        • Search completes without errors<br>
+                        • Input is either truncated or fully accepted<br>
+                        • Results page loads successfully<br>
+                        • No UI breaking or layout issues<br>
+                        • Search box displays truncated text appropriately
+                    </p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Test Technique</h4>
+                    <p>Boundary Value Analysis (maximum input length)</p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Risk Coverage</h4>
+                    <p>PR-05: Input validation edge cases (LOW risk)</p>
+                </div>
+            </div>
+
+            <!-- TC-020 -->
+            <div class="test-case">
+                <div class="test-case-header">
+                    <span class="test-case-id">TC-020: Search with Only Numbers</span>
+                    <div>
+                        <span class="badge badge-manual">Manual</span>
+                        <span class="badge badge-medium">Medium Priority</span>
+                    </div>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Test Objective</h4>
+                    <p>Verify that search handles numeric-only input correctly.</p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Preconditions</h4>
+                    <p>Amazon homepage is accessible</p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Test Data</h4>
+                    <p>Search terms: "12345", "2024", "B08N5WRWNW" (ASIN)</p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Given</h4>
+                    <p>User is on Amazon homepage</p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>When</h4>
+                    <p>User enters only numbers in search box and submits</p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Then</h4>
+                    <p>
+                        • Search completes successfully<br>
+                        • For ASIN: Shows specific product<br>
+                        • For generic numbers: Shows related products or "no results"<br>
+                        • No error messages displayed<br>
+                        • System handles numeric input gracefully
+                    </p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Test Technique</h4>
+                    <p>Equivalence Partitioning (numeric input class)</p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Risk Coverage</h4>
+                    <p>PR-05: Input validation (LOW risk)</p>
+                </div>
+            </div>
+
+            <!-- TC-021 -->
+            <div class="test-case">
+                <div class="test-case-header">
+                    <span class="test-case-id">TC-021: Page Load Performance</span>
+                    <div>
+                        <span class="badge badge-manual">Manual</span>
+                        <span class="badge badge-low">Low Priority</span>
+                    </div>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Test Objective</h4>
+                    <p>Observe and document page load performance for search results.</p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Preconditions</h4>
+                    <p>Stable internet connection, Amazon homepage accessible</p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Test Data</h4>
+                    <p>Search term: "wireless mouse"</p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Given</h4>
+                    <p>User is on Amazon homepage</p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>When</h4>
+                    <p>User performs a search and observes page load time</p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Then</h4>
+                    <p>
+                        • Search results page loads within 3 seconds<br>
+                        • Product images load progressively<br>
+                        • No significant delays or freezing<br>
+                        • Page is usable before all images load<br>
+                        • Performance is acceptable for user experience
+                    </p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Test Technique</h4>
+                    <p>Performance Observation, Manual Timing</p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Risk Coverage</h4>
+                    <p>Usability - Performance (MEDIUM risk)</p>
+                </div>
+
+                <div class="test-case-section">
+                    <h4>Note</h4>
+                    <p>This is observational only; detailed performance testing is out of scope.</p>
+                </div>
+            </div>
+
+            <h2>Test Case Traceability Matrix</h2>
+            
+            <div class="card">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Test Case ID</th>
+                            <th>Risk ID</th>
+                            <th>Test Technique</th>
+                            <th>Type</th>
+                            <th>Priority</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>TC-001</td>
+                            <td>PR-01</td>
+                            <td>Equivalence Partitioning</td>
+                            <td>Automated</td>
+                            <td>High</td>
+                        </tr>
+                        <tr>
+                            <td>TC-002</td>
+                            <td>PR-06</td>
+                            <td>Equivalence Partitioning</td>
+                            <td>Automated</td>
+                            <td>High</td>
+                        </tr>
+                        <tr>
+                            <td>TC-003</td>
+                            <td>PR-05</td>
+                            <td>Error Guessing</td>
+                            <td>Manual</td>
+                            <td>Medium</td>
+                        </tr>
+                        <tr>
+                            <td>TC-004</td>
+                            <td>PR-05</td>
+                            <td>Boundary Value Analysis</td>
+                            <td>Manual</td>
+                            <td>Medium</td>
+                        </tr>
+                        <tr>
+                            <td>TC-005</td>
+                            <td>PR-02</td>
+                            <td>State Transition</td>
+                            <td>Automated</td>
+                            <td>High</td>
+                        </tr>
+                        <tr>
+                            <td>TC-006</td>
+                            <td>PR-02</td>
+                            <td>State Transition</td>
+                            <td>Automated</td>
+                            <td>High</td>
+                        </tr>
+                        <tr>
+                            <td>TC-007</td>
+                            <td>PR-04</td>
+                            <td>Checklist-Based</td>
+                            <td>Automated</td>
+                            <td>High</td>
+                        </tr>
+                        <tr>
+                            <td>TC-008</td>
+                            <td>PR-01</td>
+                            <td>Scenario-Based</td>
+                            <td>Automated</td>
+                            <td>High</td>
+                        </tr>
+                        <tr>
+                            <td>TC-009</td>
+                            <td>PR-03</td>
+                            <td>Data-driven</td>
+                            <td>Automated</td>
+                            <td>High</td>
+                        </tr>
+                        <tr>
+                            <td>TC-010</td>
+                            <td>PR-03</td>
+                            <td>Data-driven</td>
+                            <td>Automated</td>
+                            <td>High</td>
+                        </tr>
+                        <tr>
+                            <td>TC-011</td>
+                            <td>PR-03</td>
+                            <td>Data-driven</td>
+                            <td>Automated</td>
+                            <td>High</td>
+                        </tr>
+                        <tr>
+                            <td>TC-012</td>
+                            <td>PR-03</td>
+                            <td>Error Guessing</td>
+                            <td>Automated</td>
+                            <td>Medium</td>
+                        </tr>
+                        <tr>
+                            <td>TC-013</td>
+                            <td>PR-03</td>
+                            <td>Decision Table</td>
+                            <td>Manual</td>
+                            <td>Medium</td>
+                        </tr>
+                        <tr>
+                            <td>TC-014</td>
+                            <td>PR-06</td>
+                            <td>Exploratory</td>
+                            <td>Manual</td>
+                            <td>High</td>
+                        </tr>
+                        <tr>
+                            <td>TC-018</td>
+                            <td>Usability</td>
+                            <td>Exploratory</td>
+                            <td>Manual</td>
+                            <td>Medium</td>
+                        </tr>
+                        <tr>
+                            <td>TC-019</td>
+                            <td>PR-05</td>
+                            <td>Boundary Value Analysis</td>
+                            <td>Manual</td>
+                            <td>Low</td>
+                        </tr>
+                        <tr>
+                            <td>TC-020</td>
+                            <td>PR-05</td>
+                            <td>Equivalence Partitioning</td>
+                            <td>Manual</td>
+                            <td>Medium</td>
+                        </tr>
+                        <tr>
+                            <td>TC-021</td>
+                            <td>Usability</td>
+                            <td>Performance Observation</td>
+                            <td>Manual</td>
+                            <td>Low</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </main>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Amazon QA Testing Project</p>
+            <p>Created for SAP Fioneer QA Engineer Assessment</p>
+        </div>
+    </footer>
+</body>
+</html>
+

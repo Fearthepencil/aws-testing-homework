@@ -1,0 +1,23 @@
+{
+  "default_search_term": "wireless mouse",
+  "alternative_search_terms": [
+    "gaming keyboard rgb",
+    "usb-c cable",
+    "bluetooth headphones",
+    "laptop stand",
+    "mechanical keyboard"
+  ],
+  "edge_case_searches": [
+    "!@#$%",
+    "12345",
+    "",
+    "a",
+    "product with very long search term that exceeds normal length expectations"
+  ],
+  "test_data_notes": {
+    "default_search_term": "Used for most automated tests - reliable results",
+    "alternative_search_terms": "Used for variety in manual testing",
+    "edge_case_searches": "Used for negative and boundary testing"
+  }
+}
+

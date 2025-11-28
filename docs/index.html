@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon QA Homework - Test Documentation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div>
+                <h1>Amazon Website Testing</h1>
+                <p class="subtitle">QA Engineer Homework Task - SAP Fioneer</p>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="test-plan.html">Test Plan</a></li>
+                <li><a href="test-cases.html">Test Cases</a></li>
+                <li><a href="bug-report.html">Bug Report</a></li>
+                <li><a href="test-data.html">Test Data</a></li>
+                <li><a href="exploratory-sessions.html">Exploratory Testing</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <main>
+            <h1>Welcome to Amazon QA Testing Documentation</h1>
+            
+            <div class="card">
+                <div class="card-header">Project Overview</div>
+                <p><strong>Objective:</strong> Test Amazon's product search functionality to ensure correct operation and smooth user experience.</p>
+                <p><strong>Scope:</strong> Product search and search result pages, including pagination and price calculations.</p>
+                <p><strong>Duration:</strong> 7 days</p>
+                <p><strong>Test Environment:</strong> Google Chrome, Amazon.com (live production site)</p>
+            </div>
+
+            <h2>Test Deliverables</h2>
+            
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-header">📋 Test Plan</div>
+                    <p>Comprehensive test strategy, objectives, scope, and approach following ISTQB standards.</p>
+                    <p><a href="test-plan.html">View Test Plan →</a></p>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">✅ Test Cases</div>
+                    <p>18 detailed test cases in BDD Given-When-Then format covering functional and non-functional testing.</p>
+                    <p><a href="test-cases.html">View Test Cases →</a></p>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">🐛 Bug Report</div>
+                    <p>Defects discovered during testing with detailed reproduction steps and severity classification.</p>
+                    <p><a href="bug-report.html">View Bug Report →</a></p>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">📊 Test Data</div>
+                    <p>Sample product data, search terms, and input values used during testing.</p>
+                    <p><a href="test-data.html">View Test Data →</a></p>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">🔍 Exploratory Testing</div>
+                    <p>Session-based exploratory testing notes and findings from unscripted testing sessions.</p>
+                    <p><a href="exploratory-sessions.html">View Sessions →</a></p>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">🤖 Automated Tests</div>
+                    <p>Playwright test automation project with 10 automated test cases.</p>
+                    <p><em>See README.md in project root for setup instructions</em></p>
+                </div>
+            </div>
+
+            <h2>Test Coverage Summary</h2>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Automated</th>
+                        <th>Manual</th>
+                        <th>Exploratory</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Core Functional</td>
+                        <td>6</td>
+                        <td>2</td>
+                        <td>-</td>
+                        <td>8</td>
+                    </tr>
+                    <tr>
+                        <td>Price Calculation</td>
+                        <td>4</td>
+                        <td>1</td>
+                        <td>-</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td>Quality/Usability</td>
+                        <td>0</td>
+                        <td>5</td>
+                        <td>-</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td>Exploratory Sessions</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>3</td>
+                        <td>3</td>
+                    </tr>
+                    <tr style="font-weight: 600; background-color: #F7F8F8;">
+                        <td>TOTAL</td>
+                        <td>10</td>
+                        <td>8</td>
+                        <td>3</td>
+                        <td>21</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>Key Features</h2>
+            
+            <div class="card">
+                <h3>✨ Highlights</h3>
+                <ul>
+                    <li><strong>ISTQB-Compliant:</strong> Test documentation follows ISTQB Foundation and Test Analyst standards</li>
+                    <li><strong>BDD Format:</strong> All test cases written in Given-When-Then format for clarity</li>
+                    <li><strong>Mixed Approach:</strong> Combination of automated, manual, and exploratory testing</li>
+                    <li><strong>Price Calculation:</strong> Automated calculation of average prices across 3 result pages</li>
+                    <li><strong>Page Object Model:</strong> Maintainable automation using POM design pattern</li>
+                    <li><strong>Risk-Based Testing:</strong> Test prioritization based on risk analysis</li>
+                    <li><strong>Professional Documentation:</strong> Linked HTML reports with cross-references</li>
+                </ul>
+            </div>
+
+            <h2>Technology Stack</h2>
+            
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-header">Automation</div>
+                    <ul>
+                        <li>Python 3.9+</li>
+                        <li>Playwright</li>
+                        <li>Pytest</li>
+                        <li>Page Object Model</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">Documentation</div>
+                    <ul>
+                        <li>HTML5 & CSS3</li>
+                        <li>ISTQB Standards</li>
+                        <li>BDD Format</li>
+                        <li>Markdown</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">Testing Tools</div>
+                    <ul>
+                        <li>Chrome DevTools</li>
+                        <li>Playwright Inspector</li>
+                        <li>Loguru (Logging)</li>
+                        <li>Pytest HTML Reporter</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h2>Quick Start</h2>
+            
+            <div class="card">
+                <h3>Running Automated Tests</h3>
+                <pre><code># Install dependencies
+pip install -r requirements.txt
+playwright install chromium
+
+# Run all tests
+pytest tests/ -v
+
+# Run price calculation tests (with console output)
+pytest tests/test_price_calculation.py -v -s
+
+# Generate HTML report
+pytest tests/ -v --html=test-report.html --self-contained-html</code></pre>
+            </div>
+
+            <h2>Contact Information</h2>
+            
+            <div class="card">
+                <p><strong>Candidate:</strong> [Your Name]</p>
+                <p><strong>Email:</strong> [your.email@example.com]</p>
+                <p><strong>Position:</strong> QA Engineer - SAP Fioneer</p>
+                <p><strong>Date Submitted:</strong> November 2024</p>
+            </div>
+        </main>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Amazon QA Testing Project</p>
+            <p>Created for SAP Fioneer QA Engineer Assessment</p>
+        </div>
+    </footer>
+</body>
+</html>
+

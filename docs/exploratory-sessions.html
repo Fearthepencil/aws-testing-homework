@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exploratory Testing - Amazon QA Homework</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div>
+                <h1>Exploratory Testing Sessions - Amazon Website Testing</h1>
+                <p class="subtitle">Session-Based Exploratory Testing Notes</p>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="test-plan.html">Test Plan</a></li>
+                <li><a href="test-cases.html">Test Cases</a></li>
+                <li><a href="bug-report.html">Bug Report</a></li>
+                <li><a href="test-data.html">Test Data</a></li>
+                <li><a href="exploratory-sessions.html" class="active">Exploratory Testing</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <main>
+            <h1>Exploratory Testing Sessions</h1>
+            
+            <div class="card">
+                <p>This document contains notes from session-based exploratory testing. Exploratory testing is an approach where test design and execution happen simultaneously, guided by test charters. This complements scripted testing by discovering issues that may not be covered by formal test cases.</p>
+                
+                <h3>Exploratory Testing Overview</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Session</th>
+                            <th>Duration</th>
+                            <th>Charter</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>SESSION-01</td>
+                            <td>60 minutes</td>
+                            <td>Search Behavior Exploration</td>
+                            <td>Planned</td>
+                        </tr>
+                        <tr>
+                            <td>SESSION-02</td>
+                            <td>45 minutes</td>
+                            <td>Results Page Deep Dive</td>
+                            <td>Planned</td>
+                        </tr>
+                        <tr>
+                            <td>SESSION-03</td>
+                            <td>30 minutes</td>
+                            <td>Price Display Variations</td>
+                            <td>Planned</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>Session Template</h2>
+
+            <div class="card" style="background-color: #F7F8F8;">
+                <h3>SESSION-XX: [Session Name]</h3>
+                
+                <table>
+                    <tr>
+                        <th style="width: 200px;">Session ID</th>
+                        <td>SESSION-XX</td>
+                    </tr>
+                    <tr>
+                        <th>Tester</th>
+                        <td>[Your Name]</td>
+                    </tr>
+                    <tr>
+                        <th>Date</th>
+                        <td>[Date]</td>
+                    </tr>
+                    <tr>
+                        <th>Duration</th>
+                        <td>[Planned] / [Actual] minutes</td>
+                    </tr>
+                    <tr>
+                        <th>Environment</th>
+                        <td>Chrome [version], Windows 10, https://www.amazon.com</td>
+                    </tr>
+                </table>
+
+                <h4>Charter</h4>
+                <p><strong>Explore:</strong> [Area to explore]</p>
+                <p><strong>With:</strong> [Resources, tools, data]</p>
+                <p><strong>To discover:</strong> [What you're looking for - bugs, risks, information]</p>
+
+                <h4>Areas Covered</h4>
+                <ul>
+                    <li>[Area 1]</li>
+                    <li>[Area 2]</li>
+                    <li>[Area 3]</li>
+                </ul>
+
+                <h4>Test Ideas Explored</h4>
+                <ol>
+                    <li>[Test idea 1 - what was tried]</li>
+                    <li>[Test idea 2 - what was tried]</li>
+                    <li>[Test idea 3 - what was tried]</li>
+                </ol>
+
+                <h4>Observations</h4>
+                <ul>
+                    <li><strong>Observation 1:</strong> [What was noticed]</li>
+                    <li><strong>Observation 2:</strong> [What was noticed]</li>
+                    <li><strong>Observation 3:</strong> [What was noticed]</li>
+                </ul>
+
+                <h4>Issues Found</h4>
+                <ul>
+                    <li><strong>Issue 1:</strong> [Description] - <em>Logged as BUG-XXX</em></li>
+                    <li><strong>Issue 2:</strong> [Description] - <em>Logged as BUG-XXX</em></li>
+                    <li>No issues found</li>
+                </ul>
+
+                <h4>Questions Raised</h4>
+                <ul>
+                    <li>[Question 1 about behavior or requirements]</li>
+                    <li>[Question 2 about behavior or requirements]</li>
+                </ul>
+
+                <h4>Risks Identified</h4>
+                <ul>
+                    <li>[Risk 1]</li>
+                    <li>[Risk 2]</li>
+                </ul>
+
+                <h4>Session Notes</h4>
+                <p>[Free-form notes about the session, interesting findings, thoughts, etc.]</p>
+
+                <h4>Coverage Assessment</h4>
+                <p><strong>Charter Coverage:</strong> [Low / Medium / High] - [Explanation]</p>
+                <p><strong>Areas Not Covered:</strong> [What was planned but not explored]</p>
+
+                <h4>Follow-up Actions</h4>
+                <ul>
+                    <li>[Action 1 - e.g., create formal test case]</li>
+                    <li>[Action 2 - e.g., investigate further]</li>
+                    <li>[Action 3 - e.g., discuss with team]</li>
+                </ul>
+            </div>
+
+            <h2>Planned Sessions</h2>
+
+            <!-- SESSION-01 -->
+            <div class="card">
+                <h3>SESSION-01: Search Behavior Exploration</h3>
+                
+                <table>
+                    <tr>
+                        <th style="width: 200px;">Session ID</th>
+                        <td>SESSION-01</td>
+                    </tr>
+                    <tr>
+                        <th>Duration</th>
+                        <td>60 minutes</td>
+                    </tr>
+                    <tr>
+                        <th>Status</th>
+                        <td><span class="badge badge-medium">Planned</span></td>
+                    </tr>
+                </table>
+
+                <h4>Charter</h4>
+                <p><strong>Explore:</strong> Amazon search functionality and input handling</p>
+                <p><strong>With:</strong> Various search terms, special characters, and edge cases</p>
+                <p><strong>To discover:</strong> Edge cases, usability issues, and unexpected behaviors in search</p>
+
+                <h4>Planned Areas to Cover</h4>
+                <ul>
+                    <li>Different search term combinations and patterns</li>
+                    <li>Special characters and unicode handling</li>
+                    <li>Search history and suggestions behavior</li>
+                    <li>Auto-complete functionality</li>
+                    <li>Search with various keyboard inputs (Enter vs. Click)</li>
+                    <li>Copy-paste behavior in search box</li>
+                    <li>Search persistence across navigation</li>
+                </ul>
+
+                <h4>Test Ideas to Explore</h4>
+                <ol>
+                    <li>Try searching with emoji characters</li>
+                    <li>Test very rapid consecutive searches</li>
+                    <li>Explore search with leading/trailing spaces</li>
+                    <li>Test search with mixed case (uppercase/lowercase)</li>
+                    <li>Try international characters (é, ñ, ü, etc.)</li>
+                    <li>Test search box behavior when clicking outside</li>
+                    <li>Explore browser back button after search</li>
+                </ol>
+            </div>
+
+            <!-- SESSION-02 -->
+            <div class="card">
+                <h3>SESSION-02: Results Page Deep Dive</h3>
+                
+                <table>
+                    <tr>
+                        <th style="width: 200px;">Session ID</th>
+                        <td>SESSION-02</td>
+                    </tr>
+                    <tr>
+                        <th>Duration</th>
+                        <td>45 minutes</td>
+                    </tr>
+                    <tr>
+                        <th>Status</th>
+                        <td><span class="badge badge-medium">Planned</span></td>
+                    </tr>
+                </table>
+
+                <h4>Charter</h4>
+                <p><strong>Explore:</strong> Search results page layout, content, and interactions</p>
+                <p><strong>With:</strong> Different search terms and result types</p>
+                <p><strong>To discover:</strong> Data quality issues, layout problems, and interaction bugs</p>
+
+                <h4>Planned Areas to Cover</h4>
+                <ul>
+                    <li>Sponsored vs. organic result differentiation</li>
+                    <li>Product data completeness and accuracy</li>
+                    <li>Image loading and quality</li>
+                    <li>Prime badges and delivery information</li>
+                    <li>Filter and sort functionality (if accessible)</li>
+                    <li>Product card interaction (hover, click)</li>
+                    <li>Responsive behavior on different screen sizes</li>
+                </ul>
+
+                <h4>Test Ideas to Explore</h4>
+                <ol>
+                    <li>Compare sponsored vs. organic product quality</li>
+                    <li>Check for missing or broken images</li>
+                    <li>Verify price consistency across product card and detail page</li>
+                    <li>Test rapid scrolling and lazy loading behavior</li>
+                    <li>Explore "Add to Cart" from search results (if available)</li>
+                    <li>Test opening products in new tabs</li>
+                    <li>Check for duplicate products in results</li>
+                </ol>
+            </div>
+
+            <!-- SESSION-03 -->
+            <div class="card">
+                <h3>SESSION-03: Price Display Variations</h3>
+                
+                <table>
+                    <tr>
+                        <th style="width: 200px;">Session ID</th>
+                        <td>SESSION-03</td>
+                    </tr>
+                    <tr>
+                        <th>Duration</th>
+                        <td>30 minutes</td>
+                    </tr>
+                    <tr>
+                        <th>Status</th>
+                        <td><span class="badge badge-medium">Planned</span></td>
+                    </tr>
+                </table>
+
+                <h4>Charter</h4>
+                <p><strong>Explore:</strong> Different price display formats and edge cases</p>
+                <p><strong>With:</strong> Products with various price types and formats</p>
+                <p><strong>To discover:</strong> Price formatting inconsistencies, missing prices, and calculation errors</p>
+
+                <h4>Planned Areas to Cover</h4>
+                <ul>
+                    <li>Price ranges (e.g., "$19.99 - $29.99")</li>
+                    <li>Discounts and coupons display</li>
+                    <li>"See price in cart" scenarios</li>
+                    <li>Currency formatting and symbols</li>
+                    <li>Out of stock / unavailable items</li>
+                    <li>Subscribe & Save pricing</li>
+                    <li>Used/refurbished pricing display</li>
+                </ul>
+
+                <h4>Test Ideas to Explore</h4>
+                <ol>
+                    <li>Find products with price ranges and verify format</li>
+                    <li>Look for products with active discounts</li>
+                    <li>Identify products without displayed prices</li>
+                    <li>Check decimal place consistency</li>
+                    <li>Verify currency symbol placement</li>
+                    <li>Compare list price vs. sale price display</li>
+                    <li>Test price extraction for automation</li>
+                </ol>
+            </div>
+
+            <h2>Exploratory Testing Best Practices</h2>
+            
+            <div class="card">
+                <h3>Session Guidelines</h3>
+                <ul>
+                    <li><strong>Time-boxed:</strong> Each session has a defined duration (30-90 minutes)</li>
+                    <li><strong>Charter-driven:</strong> Clear objective guides exploration</li>
+                    <li><strong>Note-taking:</strong> Document observations, questions, and issues in real-time</li>
+                    <li><strong>Flexible:</strong> Follow interesting paths even if not in original plan</li>
+                    <li><strong>Debriefing:</strong> Review findings after each session</li>
+                </ul>
+
+                <h3>What to Document</h3>
+                <ul>
+                    <li>Bugs and defects (log formally in bug tracker)</li>
+                    <li>Interesting behaviors (even if not bugs)</li>
+                    <li>Questions about requirements or expected behavior</li>
+                    <li>Risks identified during exploration</li>
+                    <li>Ideas for future test cases</li>
+                    <li>Areas that need more investigation</li>
+                </ul>
+
+                <h3>Session Metrics</h3>
+                <p>After completing sessions, track:</p>
+                <ul>
+                    <li>Total time spent on exploratory testing</li>
+                    <li>Number of issues found per session</li>
+                    <li>Coverage of charter objectives</li>
+                    <li>New test ideas generated</li>
+                    <li>Areas requiring follow-up</li>
+                </ul>
+            </div>
+
+        </main>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Amazon QA Testing Project</p>
+            <p>Created for SAP Fioneer QA Engineer Assessment</p>
+        </div>
+    </footer>
+</body>
+</html>
+

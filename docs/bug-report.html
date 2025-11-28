@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bug Report - Amazon QA Homework</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div>
+                <h1>Bug Report - Amazon Website Testing</h1>
+                <p class="subtitle">Defects Discovered During Testing</p>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="test-plan.html">Test Plan</a></li>
+                <li><a href="test-cases.html">Test Cases</a></li>
+                <li><a href="bug-report.html" class="active">Bug Report</a></li>
+                <li><a href="test-data.html">Test Data</a></li>
+                <li><a href="exploratory-sessions.html">Exploratory Testing</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <main>
+            <h1>Bug Report</h1>
+            
+            <div class="card">
+                <p>This document contains defects discovered during testing of Amazon's product search functionality. All bugs are documented following ISTQB defect reporting standards with complete reproduction steps, expected vs. actual results, and supporting evidence.</p>
+                
+                <p><strong>Note:</strong> Bugs will be documented here as they are discovered during actual test execution. Each bug will include:</p>
+                <ul>
+                    <li>Unique Bug ID</li>
+                    <li>Summary and description</li>
+                    <li>Steps to reproduce</li>
+                    <li>Expected vs. Actual results</li>
+                    <li>Environment details</li>
+                    <li>Screenshots/evidence</li>
+                    <li>Severity and priority</li>
+                    <li>Related test cases</li>
+                </ul>
+            </div>
+
+            <h2>Bug Report Template</h2>
+
+            <!-- BUG TEMPLATE -->
+            <div class="bug">
+                <div class="bug-header">
+                    <span class="bug-id">BUG-XXX: [Brief Summary of the Issue]</span>
+                    <div>
+                        <span class="badge badge-high">Severity</span>
+                        <span class="badge badge-high">Priority</span>
+                    </div>
+                </div>
+
+                <table style="margin-top: 15px;">
+                    <tr>
+                        <th style="width: 200px;">Bug ID</th>
+                        <td>BUG-XXX</td>
+                    </tr>
+                    <tr>
+                        <th>Summary</th>
+                        <td>[One-line description of the defect]</td>
+                    </tr>
+                    <tr>
+                        <th>Reported By</th>
+                        <td>[Your Name]</td>
+                    </tr>
+                    <tr>
+                        <th>Date Reported</th>
+                        <td>[Date]</td>
+                    </tr>
+                    <tr>
+                        <th>Status</th>
+                        <td>Open / In Progress / Resolved / Closed</td>
+                    </tr>
+                    <tr>
+                        <th>Severity</th>
+                        <td><span class="badge badge-critical">Critical</span> / <span class="badge badge-high">High</span> / <span class="badge badge-medium">Medium</span> / <span class="badge badge-low">Low</span></td>
+                    </tr>
+                    <tr>
+                        <th>Priority</th>
+                        <td><span class="badge badge-high">High</span> / <span class="badge badge-medium">Medium</span> / <span class="badge badge-low">Low</span></td>
+                    </tr>
+                    <tr>
+                        <th>Related Test Case</th>
+                        <td><a href="test-cases.html">TC-XXX: Test Case Name</a></td>
+                    </tr>
+                    <tr>
+                        <th>Environment</th>
+                        <td>
+                            <strong>OS:</strong> Windows 10 / macOS / Linux<br>
+                            <strong>Browser:</strong> Chrome [version]<br>
+                            <strong>URL:</strong> [Specific URL where bug occurs]<br>
+                            <strong>Date:</strong> [Date of discovery]
+                        </td>
+                    </tr>
+                </table>
+
+                <h3>Description</h3>
+                <p>[Detailed description of the defect, including context and what was being tested when the bug was discovered]</p>
+
+                <h3>Steps to Reproduce</h3>
+                <ol>
+                    <li>[Step 1]</li>
+                    <li>[Step 2]</li>
+                    <li>[Step 3]</li>
+                    <li>[Continue with clear, numbered steps]</li>
+                    <li>[Last step that triggers the bug]</li>
+                </ol>
+
+                <h3>Expected Result</h3>
+                <p>[What should happen according to requirements or expected behavior]</p>
+
+                <h3>Actual Result</h3>
+                <p>[What actually happens - the defect behavior observed]</p>
+
+                <h3>Impact</h3>
+                <ul>
+                    <li><strong>User Impact:</strong> [How this affects end users]</li>
+                    <li><strong>Business Impact:</strong> [Business consequences]</li>
+                    <li><strong>Frequency:</strong> [How often this occurs]</li>
+                    <li><strong>Workaround Available:</strong> [Yes/No - describe if yes]</li>
+                </ul>
+
+                <h3>Screenshots/Evidence</h3>
+                <p>[Attach screenshots, logs, or other evidence here]</p>
+                <div style="margin: 20px 0; border: 1px solid #ddd; padding: 10px; background-color: #f9f9f9;">
+                    <p><strong>Example Screenshot:</strong></p>
+                    <img src="../pogledam-ono-kurac-24.jpg" alt="Bug Screenshot Example" style="max-width: 100%; height: auto; border: 1px solid #ccc;">
+                    <p style="margin-top: 10px;"><em>Screenshot: pogledam-ono-kurac-24.jpg - Example of visual evidence for bug report</em></p>
+                </div>
+                <pre>[Console logs or error messages if applicable]</pre>
+
+                <h3>Suggested Fix</h3>
+                <p>[Optional: Technical suggestion for how to fix the issue]</p>
+
+                <h3>Additional Notes</h3>
+                <p>[Any other relevant information]</p>
+            </div>
+
+            <h2>Defect Summary</h2>
+            
+            <div class="card">
+                <p><em>This section will be populated after test execution with a summary of all discovered defects.</em></p>
+                
+                <h3>Bug Statistics</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Severity</th>
+                            <th>Count</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="badge badge-critical">Critical</span></td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge badge-high">High</span></td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge badge-medium">Medium</span></td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge badge-low">Low</span></td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                        <tr style="font-weight: 600;">
+                            <td>TOTAL</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </main>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Amazon QA Testing Project</p>
+            <p>Created for SAP Fioneer QA Engineer Assessment</p>
+        </div>
+    </footer>
+</body>
+</html>

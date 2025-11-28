@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Plan - Amazon QA Homework</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div>
+                <h1>Test Plan - Amazon Website Testing</h1>
+                <p class="subtitle">Product Search Functionality Testing</p>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="test-plan.html" class="active">Test Plan</a></li>
+                <li><a href="test-cases.html">Test Cases</a></li>
+                <li><a href="bug-report.html">Bug Report</a></li>
+                <li><a href="test-data.html">Test Data</a></li>
+                <li><a href="exploratory-sessions.html">Exploratory Testing</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <main>
+            <h1>Test Plan</h1>
+            
+            <div class="card">
+                <table>
+                    <tr>
+                        <th style="width: 200px;">Document Information</th>
+                        <th>Details</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Project Name</strong></td>
+                        <td>Amazon Website Testing - Product Search</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Version</strong></td>
+                        <td>1.0</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Date</strong></td>
+                        <td>November 2024</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Author</strong></td>
+                        <td>[Your Name] - QA Engineer Candidate</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Status</strong></td>
+                        <td>Final</td>
+                    </tr>
+                </table>
+            </div>
+
+            <h2>1. Introduction</h2>
+            
+            <div class="card">
+                <h3>1.1 Purpose</h3>
+                <p>This test plan defines the testing approach, scope, objectives, resources, and schedule for testing Amazon's product search functionality. The plan follows ISTQB Foundation Level standards and serves as a guide for all testing activities.</p>
+                
+                <h3>1.2 Document Scope</h3>
+                <p>This document covers:</p>
+                <ul>
+                    <li>Test objectives and scope</li>
+                    <li>Test strategy and approach</li>
+                    <li>Test design techniques</li>
+                    <li>Test environment and data requirements</li>
+                    <li>Entry and exit criteria</li>
+                    <li>Risk analysis and mitigation</li>
+                    <li>Test deliverables</li>
+                </ul>
+
+                <h3>1.3 References</h3>
+                <ul>
+                    <li>ISTQB Foundation Level Syllabus v4.0.1</li>
+                    <li>ISTQB Advanced Test Analyst Syllabus v4.0</li>
+                    <li>ISO/IEC/IEEE 29119 Software Testing Standards</li>
+                    <li>Amazon.com website: <a href="https://www.amazon.com" target="_blank">https://www.amazon.com</a></li>
+                </ul>
+            </div>
+
+            <h2>2. Test Objectives</h2>
+            
+            <div class="card">
+                <p>The primary objectives of this testing effort are:</p>
+                <ol>
+                    <li><strong>Verify Product Search Functionality:</strong> Ensure users can successfully search for products using various search terms</li>
+                    <li><strong>Validate Search Results Quality:</strong> Confirm that search results are relevant, accurate, and complete</li>
+                    <li><strong>Test Pagination Mechanism:</strong> Verify navigation through multiple pages of search results</li>
+                    <li><strong>Calculate Price Averages:</strong> Extract and calculate average product prices across the first three result pages</li>
+                    <li><strong>Identify Defects:</strong> Discover and document any functional, usability, or data quality issues</li>
+                    <li><strong>Assess User Experience:</strong> Evaluate the overall usability and user-friendliness of the search functionality</li>
+                    <li><strong>Ensure Data Accuracy:</strong> Verify that product information (titles, prices, ratings) is displayed correctly</li>
+                </ol>
+            </div>
+
+            <h2>3. Test Scope</h2>
+            
+            <div class="card">
+                <h3>3.1 In Scope</h3>
+                <ul>
+                    <li><strong>Product Search:</strong>
+                        <ul>
+                            <li>Search input functionality</li>
+                            <li>Search button operation</li>
+                            <li>Search with various keyword combinations</li>
+                            <li>Special character handling</li>
+                            <li>Empty search validation</li>
+                        </ul>
+                    </li>
+                    <li><strong>Search Results Page:</strong>
+                        <ul>
+                            <li>Product listing display</li>
+                            <li>Product card information (title, price, rating, image)</li>
+                            <li>Result count display</li>
+                            <li>Pagination controls</li>
+                            <li>Navigation to product detail pages</li>
+                        </ul>
+                    </li>
+                    <li><strong>Price Calculation:</strong>
+                        <ul>
+                            <li>Price extraction from product cards</li>
+                            <li>Average price calculation for pages 1-3</li>
+                            <li>Handling of missing prices</li>
+                            <li>Handling of price ranges</li>
+                        </ul>
+                    </li>
+                    <li><strong>Quality Characteristics (ISO 25010):</strong>
+                        <ul>
+                            <li>Functional Suitability (completeness, correctness)</li>
+                            <li>Usability (recognizability, learnability)</li>
+                            <li>Reliability (availability, fault tolerance)</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h3>3.2 Out of Scope</h3>
+                <ul>
+                    <li>User authentication and login functionality</li>
+                    <li>Shopping cart operations</li>
+                    <li>Checkout process</li>
+                    <li>Payment processing</li>
+                    <li>Product reviews and ratings submission</li>
+                    <li>Advanced filtering and sorting (beyond basic functionality)</li>
+                    <li>Mobile application testing</li>
+                    <li>Performance and load testing</li>
+                    <li>Security testing</li>
+                    <li>Accessibility testing (WCAG compliance)</li>
+                </ul>
+            </div>
+
+            <h2>4. Test Strategy</h2>
+            
+            <div class="card">
+                <h3>4.1 Overall Approach</h3>
+                <p>The testing approach combines multiple methodologies to ensure comprehensive coverage:</p>
+                
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Approach</th>
+                            <th>Description</th>
+                            <th>Coverage</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Automated Testing</strong></td>
+                            <td>Playwright-based automated tests for regression and data validation</td>
+                            <td>10 test cases (~56%)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Manual Testing</strong></td>
+                            <td>Scripted manual tests for edge cases and visual validation</td>
+                            <td>8 test cases (~44%)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Exploratory Testing</strong></td>
+                            <td>Session-based exploratory testing for discovery</td>
+                            <td>3 sessions (135 min)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Risk-Based Testing</strong></td>
+                            <td>Prioritization based on risk analysis</td>
+                            <td>All test cases</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>4.2 Test Levels</h3>
+                <p><strong>System Testing:</strong> All testing is performed at the system level against the live Amazon.com website, focusing on end-to-end user scenarios.</p>
+
+                <h3>4.3 Test Types</h3>
+                <ul>
+                    <li><strong>Functional Testing:</strong> Verify that search functionality works as expected</li>
+                    <li><strong>Usability Testing:</strong> Assess user experience and interface intuitiveness</li>
+                    <li><strong>Data Validation Testing:</strong> Verify accuracy of product information and price calculations</li>
+                    <li><strong>Negative Testing:</strong> Test with invalid inputs and edge cases</li>
+                </ul>
+
+                <h3>4.4 Test Design Techniques</h3>
+                <p>The following ISTQB-recognized test techniques are applied:</p>
+                
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Technique</th>
+                            <th>Category</th>
+                            <th>Application</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Equivalence Partitioning</td>
+                            <td>Black-box</td>
+                            <td>Search input validation (valid/invalid terms)</td>
+                        </tr>
+                        <tr>
+                            <td>Boundary Value Analysis</td>
+                            <td>Black-box</td>
+                            <td>Search string length, pagination limits</td>
+                        </tr>
+                        <tr>
+                            <td>Decision Table Testing</td>
+                            <td>Black-box</td>
+                            <td>Price display logic (with/without prices, ranges)</td>
+                        </tr>
+                        <tr>
+                            <td>State Transition Testing</td>
+                            <td>Black-box</td>
+                            <td>Pagination state changes (page 1 → 2 → 3)</td>
+                        </tr>
+                        <tr>
+                            <td>Error Guessing</td>
+                            <td>Experience-based</td>
+                            <td>Special characters, empty inputs</td>
+                        </tr>
+                        <tr>
+                            <td>Exploratory Testing</td>
+                            <td>Experience-based</td>
+                            <td>Unscripted discovery of issues</td>
+                        </tr>
+                        <tr>
+                            <td>Checklist-Based Testing</td>
+                            <td>Experience-based</td>
+                            <td>Product card completeness checks</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>5. Test Environment</h2>
+            
+            <div class="card">
+                <h3>5.1 Hardware Requirements</h3>
+                <ul>
+                    <li>Desktop/Laptop computer</li>
+                    <li>Minimum 8GB RAM</li>
+                    <li>Internet connection (stable, minimum 10 Mbps)</li>
+                    <li>Display resolution: 1920x1080 (Full HD)</li>
+                </ul>
+
+                <h3>5.2 Software Requirements</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Component</th>
+                            <th>Version/Details</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Operating System</td>
+                            <td>Windows 10/11, macOS 12+, or Linux</td>
+                        </tr>
+                        <tr>
+                            <td>Browser</td>
+                            <td>Google Chrome (latest stable version)</td>
+                        </tr>
+                        <tr>
+                            <td>Python</td>
+                            <td>3.9 or higher</td>
+                        </tr>
+                        <tr>
+                            <td>Playwright</td>
+                            <td>1.48.0</td>
+                        </tr>
+                        <tr>
+                            <td>Pytest</td>
+                            <td>8.3.3</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>5.3 Test Data</h3>
+                <p>Test data includes:</p>
+                <ul>
+                    <li>Predefined search terms (e.g., "wireless mouse", "gaming keyboard rgb")</li>
+                    <li>Edge case inputs (special characters, very long strings, numbers only)</li>
+                    <li>No personal or sensitive data is used</li>
+                </ul>
+                <p>See <a href="test-data.html">Test Data</a> for complete details.</p>
+
+                <h3>5.4 Test URL</h3>
+                <p><strong>Base URL:</strong> <a href="https://www.amazon.com" target="_blank">https://www.amazon.com</a></p>
+                <p><strong>Note:</strong> Testing is performed on the live production environment.</p>
+            </div>
+
+            <h2>6. Entry and Exit Criteria</h2>
+            
+            <div class="card">
+                <h3>6.1 Entry Criteria</h3>
+                <p>Testing can begin when:</p>
+                <ul>
+                    <li>✓ Test plan is reviewed and approved</li>
+                    <li>✓ Test environment is set up and verified</li>
+                    <li>✓ Test automation framework is configured</li>
+                    <li>✓ Test data is prepared</li>
+                    <li>✓ Amazon.com website is accessible</li>
+                    <li>✓ Test cases are designed and reviewed</li>
+                </ul>
+
+                <h3>6.2 Exit Criteria</h3>
+                <p>Testing is considered complete when:</p>
+                <ul>
+                    <li>✓ All planned test cases (18) have been executed</li>
+                    <li>✓ All exploratory testing sessions (3) are completed</li>
+                    <li>✓ Price calculations for pages 1-3 are completed and logged</li>
+                    <li>✓ 100% of high-priority test cases pass</li>
+                    <li>✓ All critical and high-severity defects are documented</li>
+                    <li>✓ Test execution results are documented</li>
+                    <li>✓ Test summary report is prepared</li>
+                    <li>✓ All deliverables are completed and reviewed</li>
+                </ul>
+
+                <h3>6.3 Suspension Criteria</h3>
+                <p>Testing will be suspended if:</p>
+                <ul>
+                    <li>Amazon.com website is unavailable or experiencing major outages</li>
+                    <li>Critical blocking defects prevent further testing</li>
+                    <li>Test environment becomes unstable or unavailable</li>
+                </ul>
+
+                <h3>6.4 Resumption Criteria</h3>
+                <p>Testing can resume when:</p>
+                <ul>
+                    <li>Website availability is restored</li>
+                    <li>Blocking defects are resolved or workarounds are identified</li>
+                    <li>Test environment is stabilized</li>
+                </ul>
+            </div>
+
+            <h2>7. Risk Analysis</h2>
+            
+            <div class="card">
+                <h3>7.1 Product Risks</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Risk ID</th>
+                            <th>Risk Description</th>
+                            <th>Likelihood</th>
+                            <th>Impact</th>
+                            <th>Risk Level</th>
+                            <th>Mitigation Strategy</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>PR-01</td>
+                            <td>Search returns no results for valid queries</td>
+                            <td><span class="badge badge-medium">Medium</span></td>
+                            <td><span class="badge badge-high">High</span></td>
+                            <td><span class="badge badge-high">HIGH</span></td>
+                            <td>Priority testing of core search functionality</td>
+                        </tr>
+                        <tr>
+                            <td>PR-02</td>
+                            <td>Pagination fails to navigate to subsequent pages</td>
+                            <td><span class="badge badge-low">Low</span></td>
+                            <td><span class="badge badge-high">High</span></td>
+                            <td><span class="badge badge-medium">MEDIUM</span></td>
+                            <td>Dedicated pagination test cases</td>
+                        </tr>
+                        <tr>
+                            <td>PR-03</td>
+                            <td>Product prices displayed incorrectly</td>
+                            <td><span class="badge badge-medium">Medium</span></td>
+                            <td><span class="badge badge-high">High</span></td>
+                            <td><span class="badge badge-high">HIGH</span></td>
+                            <td>Price validation and calculation tests</td>
+                        </tr>
+                        <tr>
+                            <td>PR-04</td>
+                            <td>Missing product information (title, image, rating)</td>
+                            <td><span class="badge badge-medium">Medium</span></td>
+                            <td><span class="badge badge-medium">Medium</span></td>
+                            <td><span class="badge badge-medium">MEDIUM</span></td>
+                            <td>Data completeness validation</td>
+                        </tr>
+                        <tr>
+                            <td>PR-05</td>
+                            <td>Search with special characters causes errors</td>
+                            <td><span class="badge badge-low">Low</span></td>
+                            <td><span class="badge badge-medium">Medium</span></td>
+                            <td><span class="badge badge-low">LOW</span></td>
+                            <td>Negative testing with edge cases</td>
+                        </tr>
+                        <tr>
+                            <td>PR-06</td>
+                            <td>Poor search result relevance</td>
+                            <td><span class="badge badge-medium">Medium</span></td>
+                            <td><span class="badge badge-medium">Medium</span></td>
+                            <td><span class="badge badge-medium">MEDIUM</span></td>
+                            <td>Manual relevance checks</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>7.2 Project Risks</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Risk ID</th>
+                            <th>Risk Description</th>
+                            <th>Likelihood</th>
+                            <th>Impact</th>
+                            <th>Mitigation Strategy</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>PJ-01</td>
+                            <td>Amazon website structure changes during testing</td>
+                            <td><span class="badge badge-medium">Medium</span></td>
+                            <td><span class="badge badge-high">High</span></td>
+                            <td>Use flexible locators; update tests if needed</td>
+                        </tr>
+                        <tr>
+                            <td>PJ-02</td>
+                            <td>Rate limiting or bot detection blocks automated tests</td>
+                            <td><span class="badge badge-medium">Medium</span></td>
+                            <td><span class="badge badge-medium">Medium</span></td>
+                            <td>Add delays between tests; use realistic user agents</td>
+                        </tr>
+                        <tr>
+                            <td>PJ-03</td>
+                            <td>Internet connectivity issues</td>
+                            <td><span class="badge badge-low">Low</span></td>
+                            <td><span class="badge badge-medium">Medium</span></td>
+                            <td>Ensure stable connection; implement retry logic</td>
+                        </tr>
+                        <tr>
+                            <td>PJ-04</td>
+                            <td>Time constraints (7-day deadline)</td>
+                            <td><span class="badge badge-low">Low</span></td>
+                            <td><span class="badge badge-medium">Medium</span></td>
+                            <td>Prioritize high-risk test cases; focus on scope</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>8. Test Deliverables</h2>
+            
+            <div class="card">
+                <h3>8.1 Test Documentation</h3>
+                <ul>
+                    <li>✓ <strong>Test Plan</strong> (this document)</li>
+                    <li>✓ <strong><a href="test-cases.html">Test Cases</a></strong> - 18 detailed test cases in BDD format</li>
+                    <li>✓ <strong><a href="bug-report.html">Bug Report</a></strong> - Defects found during testing</li>
+                    <li>✓ <strong><a href="test-data.html">Test Data</a></strong> - Sample data and search terms</li>
+                    <li>✓ <strong><a href="exploratory-sessions.html">Exploratory Testing Sessions</a></strong> - Session notes</li>
+                </ul>
+
+                <h3>8.2 Test Automation</h3>
+                <ul>
+                    <li>✓ <strong>Playwright Test Suite</strong> - 10 automated test cases</li>
+                    <li>✓ <strong>Page Object Model</strong> - Reusable page objects</li>
+                    <li>✓ <strong>Test Execution Logs</strong> - Console output with price calculations</li>
+                    <li>✓ <strong>Test Report</strong> - HTML test execution report</li>
+                </ul>
+
+                <h3>8.3 Supporting Artifacts</h3>
+                <ul>
+                    <li>✓ <strong>README.md</strong> - Setup and execution instructions</li>
+                    <li>✓ <strong>Screenshots</strong> - Visual evidence of test execution</li>
+                    <li>✓ <strong>requirements.txt</strong> - Python dependencies</li>
+                </ul>
+            </div>
+
+            <h2>9. Test Schedule</h2>
+            
+            <div class="card">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Activity</th>
+                            <th>Duration</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Test Planning</td>
+                            <td>1 day</td>
+                            <td>✓ Completed</td>
+                        </tr>
+                        <tr>
+                            <td>Test Design (Test Cases)</td>
+                            <td>1 day</td>
+                            <td>✓ Completed</td>
+                        </tr>
+                        <tr>
+                            <td>Test Implementation (Automation)</td>
+                            <td>2 days</td>
+                            <td>✓ Completed</td>
+                        </tr>
+                        <tr>
+                            <td>Test Execution (Automated + Manual)</td>
+                            <td>1 day</td>
+                            <td>In Progress</td>
+                        </tr>
+                        <tr>
+                            <td>Exploratory Testing</td>
+                            <td>1 day</td>
+                            <td>Planned</td>
+                        </tr>
+                        <tr>
+                            <td>Defect Reporting & Documentation</td>
+                            <td>1 day</td>
+                            <td>In Progress</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Total</strong></td>
+                            <td><strong>7 days</strong></td>
+                            <td>On Track</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>10. Roles and Responsibilities</h2>
+            
+            <div class="card">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Role</th>
+                            <th>Responsibilities</th>
+                            <th>Assigned To</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Test Analyst</strong></td>
+                            <td>
+                                <ul>
+                                    <li>Test planning and design</li>
+                                    <li>Test case creation</li>
+                                    <li>Manual test execution</li>
+                                    <li>Exploratory testing</li>
+                                    <li>Defect reporting</li>
+                                    <li>Documentation</li>
+                                </ul>
+                            </td>
+                            <td>[Your Name]</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Test Automation Engineer</strong></td>
+                            <td>
+                                <ul>
+                                    <li>Test automation framework setup</li>
+                                    <li>Automated test implementation</li>
+                                    <li>Page Object Model development</li>
+                                    <li>Test execution and maintenance</li>
+                                </ul>
+                            </td>
+                            <td>[Your Name]</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>11. Test Metrics</h2>
+            
+            <div class="card">
+                <h3>11.1 Metrics to be Collected</h3>
+                <ul>
+                    <li><strong>Test Coverage:</strong> Percentage of requirements covered by test cases</li>
+                    <li><strong>Test Execution Progress:</strong> Number of tests executed vs. planned</li>
+                    <li><strong>Pass/Fail Rate:</strong> Percentage of tests passed vs. failed</li>
+                    <li><strong>Defect Density:</strong> Number of defects found per test case</li>
+                    <li><strong>Defect Distribution:</strong> Defects by severity and priority</li>
+                    <li><strong>Automation Coverage:</strong> Percentage of automated vs. manual tests</li>
+                </ul>
+
+                <h3>11.2 Target Metrics</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Metric</th>
+                            <th>Target</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Test Execution Rate</td>
+                            <td>100% of planned tests</td>
+                        </tr>
+                        <tr>
+                            <td>Pass Rate (High Priority)</td>
+                            <td>≥ 95%</td>
+                        </tr>
+                        <tr>
+                            <td>Automation Coverage</td>
+                            <td>≥ 50%</td>
+                        </tr>
+                        <tr>
+                            <td>Critical Defects</td>
+                            <td>0 open at completion</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>12. Assumptions and Dependencies</h2>
+            
+            <div class="card">
+                <h3>12.1 Assumptions</h3>
+                <ul>
+                    <li>Amazon.com website will remain accessible throughout the testing period</li>
+                    <li>Website structure and functionality will not change significantly during testing</li>
+                    <li>No authentication is required for basic search functionality</li>
+                    <li>Product prices are displayed in USD</li>
+                    <li>Testing can be performed on the live production environment</li>
+                </ul>
+
+                <h3>12.2 Dependencies</h3>
+                <ul>
+                    <li>Stable internet connection</li>
+                    <li>Amazon.com website availability</li>
+                    <li>Chrome browser compatibility</li>
+                    <li>Python and Playwright installation</li>
+                </ul>
+            </div>
+
+            <h2>13. Approvals</h2>
+            
+            <div class="card">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Role</th>
+                            <th>Name</th>
+                            <th>Signature</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Test Analyst</td>
+                            <td>[Your Name]</td>
+                            <td>_________________</td>
+                            <td>November 2024</td>
+                        </tr>
+                        <tr>
+                            <td>Hiring Manager</td>
+                            <td>Kristina Tanovic</td>
+                            <td>_________________</td>
+                            <td>___________</td>
+                        </tr>
+                        <tr>
+                            <td>QA Lead</td>
+                            <td>Andjelka Milutinovic</td>
+                            <td>_________________</td>
+                            <td>___________</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </main>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Amazon QA Testing Project</p>
+            <p>Created for SAP Fioneer QA Engineer Assessment</p>
+        </div>
+    </footer>
+</body>
+</html>
+

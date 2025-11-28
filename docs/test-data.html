@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Data - Amazon QA Homework</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div>
+                <h1>Test Data - Amazon Website Testing</h1>
+                <p class="subtitle">Sample Data and Input Values Used During Testing</p>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="test-plan.html">Test Plan</a></li>
+                <li><a href="test-cases.html">Test Cases</a></li>
+                <li><a href="bug-report.html">Bug Report</a></li>
+                <li><a href="test-data.html" class="active">Test Data</a></li>
+                <li><a href="exploratory-sessions.html">Exploratory Testing</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <main>
+            <h1>Test Data Documentation</h1>
+            
+            <div class="card">
+                <p>This document contains all test data used during testing, including search terms, expected results, and edge case inputs. Test data is organized by test category and purpose.</p>
+            </div>
+
+            <h2>1. Search Terms - Valid Inputs</h2>
+            
+            <div class="card">
+                <h3>Primary Search Terms</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Search Term</th>
+                            <th>Purpose</th>
+                            <th>Used in Test Cases</th>
+                            <th>Expected Results</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>"wireless mouse"</td>
+                            <td>Default test search term</td>
+                            <td>TC-001, TC-005, TC-006, TC-007, TC-008, TC-009, TC-010, TC-011</td>
+                            <td>Multiple pages of wireless mouse products</td>
+                        </tr>
+                        <tr>
+                            <td>"gaming keyboard rgb"</td>
+                            <td>Multi-keyword search</td>
+                            <td>TC-002</td>
+                            <td>Gaming keyboards with RGB lighting</td>
+                        </tr>
+                        <tr>
+                            <td>"usb-c cable"</td>
+                            <td>Search with hyphen</td>
+                            <td>Manual testing</td>
+                            <td>USB-C cables and accessories</td>
+                        </tr>
+                        <tr>
+                            <td>"bluetooth headphones"</td>
+                            <td>Alternative electronics search</td>
+                            <td>Manual testing</td>
+                            <td>Bluetooth audio products</td>
+                        </tr>
+                        <tr>
+                            <td>"laptop stand"</td>
+                            <td>Two-word search</td>
+                            <td>Manual testing</td>
+                            <td>Laptop stands and risers</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>2. Edge Case Inputs</h2>
+            
+            <div class="card">
+                <h3>Special Characters and Invalid Inputs</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Input</th>
+                            <th>Category</th>
+                            <th>Purpose</th>
+                            <th>Used in Test Case</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>""</td>
+                            <td>Empty string</td>
+                            <td>Test empty search validation</td>
+                            <td>TC-004</td>
+                        </tr>
+                        <tr>
+                            <td>"   "</td>
+                            <td>Spaces only</td>
+                            <td>Test whitespace handling</td>
+                            <td>TC-004</td>
+                        </tr>
+                        <tr>
+                            <td>"!@#$%"</td>
+                            <td>Special characters</td>
+                            <td>Test special character handling</td>
+                            <td>TC-003</td>
+                        </tr>
+                        <tr>
+                            <td>"12345"</td>
+                            <td>Numbers only</td>
+                            <td>Test numeric input</td>
+                            <td>TC-020</td>
+                        </tr>
+                        <tr>
+                            <td>"B08N5WRWNW"</td>
+                            <td>ASIN code</td>
+                            <td>Test product code search</td>
+                            <td>TC-020</td>
+                        </tr>
+                        <tr>
+                            <td>"a"</td>
+                            <td>Single character</td>
+                            <td>Test minimum length</td>
+                            <td>Manual testing</td>
+                        </tr>
+                        <tr>
+                            <td>[200+ character string]</td>
+                            <td>Very long input</td>
+                            <td>Test maximum length</td>
+                            <td>TC-019</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>3. Expected Price Ranges</h2>
+            
+            <div class="card">
+                <h3>Price Data for Validation</h3>
+                <p>Expected price ranges for common search terms (approximate, may vary):</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Search Term</th>
+                            <th>Expected Price Range</th>
+                            <th>Average Price (Estimate)</th>
+                            <th>Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>"wireless mouse"</td>
+                            <td>$8.99 - $89.99</td>
+                            <td>~$25.00</td>
+                            <td>Wide range from basic to gaming mice</td>
+                        </tr>
+                        <tr>
+                            <td>"gaming keyboard rgb"</td>
+                            <td>$29.99 - $199.99</td>
+                            <td>~$75.00</td>
+                            <td>Premium gaming peripherals</td>
+                        </tr>
+                        <tr>
+                            <td>"usb-c cable"</td>
+                            <td>$5.99 - $29.99</td>
+                            <td>~$12.00</td>
+                            <td>Varies by length and brand</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>4. Test Environment Data</h2>
+            
+            <div class="card">
+                <h3>Browser and System Configurations</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Configuration</th>
+                            <th>Details</th>
+                            <th>Purpose</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Desktop Viewport</td>
+                            <td>1920x1080</td>
+                            <td>Standard desktop testing</td>
+                        </tr>
+                        <tr>
+                            <td>Mobile Viewport</td>
+                            <td>375x667 (iPhone SE)</td>
+                            <td>Mobile responsive testing</td>
+                        </tr>
+                        <tr>
+                            <td>Browser</td>
+                            <td>Chrome 120+ (latest stable)</td>
+                            <td>Primary test browser</td>
+                        </tr>
+                        <tr>
+                            <td>Operating System</td>
+                            <td>Windows 10/11</td>
+                            <td>Test environment OS</td>
+                        </tr>
+                        <tr>
+                            <td>Network</td>
+                            <td>Stable broadband (10+ Mbps)</td>
+                            <td>Consistent connection</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>5. Pagination Test Data</h2>
+            
+            <div class="card">
+                <h3>Expected Results per Page</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Page Number</th>
+                            <th>Expected Products</th>
+                            <th>URL Pattern</th>
+                            <th>Test Cases</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Page 1</td>
+                            <td>16-48 products</td>
+                            <td>/s?k=wireless+mouse</td>
+                            <td>TC-001, TC-009</td>
+                        </tr>
+                        <tr>
+                            <td>Page 2</td>
+                            <td>16-48 products</td>
+                            <td>/s?k=wireless+mouse&page=2</td>
+                            <td>TC-005, TC-010</td>
+                        </tr>
+                        <tr>
+                            <td>Page 3</td>
+                            <td>16-48 products</td>
+                            <td>/s?k=wireless+mouse&page=3</td>
+                            <td>TC-006, TC-011</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>6. Product Card Expected Data</h2>
+            
+            <div class="card">
+                <h3>Required Product Information</h3>
+                <p>Each product card should contain the following data elements:</p>
+                <ul>
+                    <li><strong>Product Title:</strong> Text, clickable link</li>
+                    <li><strong>Product Image:</strong> Thumbnail image (usually 200x200px or similar)</li>
+                    <li><strong>Price:</strong> Format: $XX.XX or "Currently unavailable"</li>
+                    <li><strong>Rating:</strong> Star rating (0-5 stars) with format like "4.5 out of 5 stars"</li>
+                    <li><strong>Review Count:</strong> Number in parentheses, e.g., "(1,234)"</li>
+                    <li><strong>Prime Badge:</strong> If applicable</li>
+                    <li><strong>Delivery Info:</strong> Estimated delivery date or "FREE delivery"</li>
+                </ul>
+            </div>
+
+            <h2>7. Test Data Management</h2>
+            
+            <div class="card">
+                <h3>Data Source</h3>
+                <p><strong>Location:</strong> <code>test_data/search_terms.json</code></p>
+                <p>Test data is stored in JSON format for easy maintenance and automation integration.</p>
+
+                <h3>Data Refresh Strategy</h3>
+                <ul>
+                    <li>Search terms are static and do not require refresh</li>
+                    <li>Price ranges are approximate and may vary over time</li>
+                    <li>Product availability may change - tests should handle "out of stock" gracefully</li>
+                    <li>No personal or sensitive data is used in testing</li>
+                </ul>
+
+                <h3>Data Privacy</h3>
+                <p>All test data is publicly available information from Amazon.com. No user accounts, payment information, or personal data is used or stored during testing.</p>
+            </div>
+
+            <h2>8. Sample Test Data File</h2>
+            
+            <div class="card">
+                <h3>search_terms.json</h3>
+                <pre>{
+  "default_search_term": "wireless mouse",
+  "alternative_search_terms": [
+    "gaming keyboard rgb",
+    "usb-c cable",
+    "bluetooth headphones",
+    "laptop stand"
+  ],
+  "edge_case_searches": [
+    "!@#$%",
+    "12345",
+    "",
+    "a",
+    "[very long string...]"
+  ],
+  "test_data_notes": {
+    "default_search_term": "Used for most automated tests",
+    "alternative_search_terms": "Used for variety in manual testing",
+    "edge_case_searches": "Used for negative and boundary testing"
+  }
+}</pre>
+            </div>
+
+        </main>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Amazon QA Testing Project</p>
+            <p>Created for SAP Fioneer QA Engineer Assessment</p>
+        </div>
+    </footer>
+</body>
+</html>
+
