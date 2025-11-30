@@ -1,6 +1,7 @@
 import pytest
-import json
 from playwright.sync_api import sync_playwright, Browser
+import json
+
 
 @pytest.fixture(scope="session")
 def browser():
@@ -10,6 +11,7 @@ def browser():
         yield browser
         browser.close()
 
+
 @pytest.fixture(scope="function")
 def page(browser: Browser):
 
@@ -17,10 +19,11 @@ def page(browser: Browser):
         viewport={"width": 1920, "height": 1080},
     )
     page = context.new_page()
-    
+
     yield page
 
     context.close()
+
 
 @pytest.fixture(scope="session")
 def search_terms():

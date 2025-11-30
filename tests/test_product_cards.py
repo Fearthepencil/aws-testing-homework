@@ -1,6 +1,7 @@
 from pages.search_results_page import SearchResultsPage
 from pages.home_page import HomePage
 
+
 def test_product_cards(page, search_terms):
     search_term = search_terms["default_search_term"]
     home_page = HomePage(page)
@@ -19,9 +20,13 @@ def test_product_cards(page, search_terms):
         if card["rating"] is not None:
             assert len(card["rating"]) > 0, "Product rating should not Be empty"
         if card["review_count"] is not None:
-            assert len(card["review_count"]) > 0, "Product review count should should contain 'reviews'"
+            assert (
+                len(card["review_count"]) > 0
+            ), "Product review count should should contain 'reviews'"
         if card["has_delivery_info"]:
-            assert card["has_delivery_info"] == True, "Product delivery info should should Be displayed"
+            assert (
+                card["has_delivery_info"] == True
+            ), "Product delivery info should should Be displayed"
         # Delivery info is optional - not displayed for all product types
         # (e.g., products with multiple sellers may not show delivery until options are selected)
         # This inconsistency has been documented as a potential UX issue
