@@ -1,4 +1,5 @@
 import pytest
+import json
 from playwright.sync_api import sync_playwright, Browser
 
 @pytest.fixture(scope="session")
@@ -20,3 +21,8 @@ def page(browser: Browser):
     yield page
 
     context.close()
+
+@pytest.fixture(scope="session")
+def search_terms():
+    with open("test_data/search_terms.json", "r") as f:
+        return json.load(f)
