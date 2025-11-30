@@ -49,108 +49,116 @@
                 </ul>
             </div>
 
-            <h2>Bug Report Template</h2>
+            <h2>Discovered Defects</h2>
 
-            <!-- BUG TEMPLATE -->
+            <!-- BUG-001 -->
             <div class="bug">
                 <div class="bug-header">
-                    <span class="bug-id">BUG-XXX: [Brief Summary of the Issue]</span>
+                    <span class="bug-id">BUG-001: Inconsistent Delivery Information Display on Product Cards</span>
                     <div>
-                        <span class="badge badge-high">Severity</span>
-                        <span class="badge badge-high">Priority</span>
+                        <span class="badge badge-medium">Medium Severity</span>
+                        <span class="badge badge-low">Low Priority</span>
                     </div>
                 </div>
 
                 <table style="margin-top: 15px;">
                     <tr>
                         <th style="width: 200px;">Bug ID</th>
-                        <td>BUG-XXX</td>
+                        <td>BUG-001</td>
                     </tr>
                     <tr>
                         <th>Summary</th>
-                        <td>[One-line description of the defect]</td>
+                        <td>Some product cards do not display delivery information on search results page</td>
                     </tr>
                     <tr>
                         <th>Reported By</th>
-                        <td>[Your Name]</td>
+                        <td>QA Engineer</td>
                     </tr>
                     <tr>
                         <th>Date Reported</th>
-                        <td>[Date]</td>
+                        <td>November 30, 2025</td>
                     </tr>
                     <tr>
                         <th>Status</th>
-                        <td>Open / In Progress / Resolved / Closed</td>
+                        <td>Open</td>
                     </tr>
                     <tr>
                         <th>Severity</th>
-                        <td><span class="badge badge-critical">Critical</span> / <span class="badge badge-high">High</span> / <span class="badge badge-medium">Medium</span> / <span class="badge badge-low">Low</span></td>
+                        <td><span class="badge badge-medium">Medium</span></td>
                     </tr>
                     <tr>
                         <th>Priority</th>
-                        <td><span class="badge badge-high">High</span> / <span class="badge badge-medium">Medium</span> / <span class="badge badge-low">Low</span></td>
+                        <td><span class="badge badge-low">Low</span></td>
                     </tr>
                     <tr>
                         <th>Related Test Case</th>
-                        <td><a href="test-cases.html">TC-XXX: Test Case Name</a></td>
+                        <td><a href="test-cases.html#TC-007">TC-007: Product Card Displays Required Information</a></td>
                     </tr>
                     <tr>
                         <th>Environment</th>
                         <td>
-                            <strong>OS:</strong> Windows 10 / macOS / Linux<br>
-                            <strong>Browser:</strong> Chrome [version]<br>
-                            <strong>URL:</strong> [Specific URL where bug occurs]<br>
-                            <strong>Date:</strong> [Date of discovery]
+                            <strong>OS:</strong> Windows 10<br>
+                            <strong>Browser:</strong> Chrome (Chromium)<br>
+                            <strong>URL:</strong> https://www.amazon.com/s?k=wireless+mouse<br>
+                            <strong>Date:</strong> November 30, 2025
                         </td>
                     </tr>
                 </table>
 
                 <h3>Description</h3>
-                <p>[Detailed description of the defect, including context and what was being tested when the bug was discovered]</p>
+                <p>While testing product card information display (TC-007), an inconsistency was discovered where some products show delivery information directly on the search results page product cards, while others do not display this information until the user clicks "See All Buying Options".</p>
 
                 <h3>Steps to Reproduce</h3>
                 <ol>
-                    <li>[Step 1]</li>
-                    <li>[Step 2]</li>
-                    <li>[Step 3]</li>
-                    <li>[Continue with clear, numbered steps]</li>
-                    <li>[Last step that triggers the bug]</li>
+                    <li>Navigate to https://www.amazon.com</li>
+                    <li>Search for "wireless mouse"</li>
+                    <li>Observe product cards on the search results page</li>
+                    <li>Compare delivery information display across multiple products</li>
+                    <li>Note that some products show delivery dates (e.g., "Delivery Dec 16-29") while others show "No featured offers available"</li>
+                    <li>Click "See All Buying Options" on products without delivery info</li>
+                    <li>Observe that delivery information IS available, but only shown after this additional click</li>
                 </ol>
 
                 <h3>Expected Result</h3>
-                <p>[What should happen according to requirements or expected behavior]</p>
+                <p>All product cards should consistently display delivery information on the search results page to allow users to easily compare delivery times when making purchase decisions. This is a critical factor for customer decision-making and should be presented uniformly across all products.</p>
 
                 <h3>Actual Result</h3>
-                <p>[What actually happens - the defect behavior observed]</p>
+                <p>Delivery information display is inconsistent:<br>
+                • Some products display delivery dates directly on product cards (e.g., "Delivery Wednesday, December 10")<br>
+                • Other products show "No featured offers available" without delivery information<br>
+                • Delivery information for the latter category is only revealed after clicking "See All Buying Options"
+                </p>
 
                 <h3>Impact</h3>
                 <ul>
-                    <li><strong>User Impact:</strong> [How this affects end users]</li>
-                    <li><strong>Business Impact:</strong> [Business consequences]</li>
-                    <li><strong>Frequency:</strong> [How often this occurs]</li>
-                    <li><strong>Workaround Available:</strong> [Yes/No - describe if yes]</li>
+                    <li><strong>User Impact:</strong> Users cannot easily compare delivery times across products without additional clicks. This creates friction in the shopping experience and may lead to suboptimal purchase decisions.</li>
+                    <li><strong>Business Impact:</strong> Potential reduction in conversion rates due to increased cognitive load and extra steps required to access critical purchase information.</li>
+                    <li><strong>Frequency:</strong> Occurs consistently for products with multiple sellers or marketplace items (approximately 20-30% of search results)</li>
+                    <li><strong>Workaround Available:</strong> Yes - users can click "See All Buying Options" to view delivery information, but this requires additional interaction</li>
                 </ul>
 
                 <h3>Screenshots/Evidence</h3>
-                <p>[Attach screenshots, logs, or other evidence here]</p>
-                <div style="margin: 20px 0; border: 1px solid #ddd; padding: 10px; background-color: #f9f9f9;">
-                    <p><strong>Example Screenshot:</strong></p>
-                    <img src="../pogledam-ono-kurac-24.jpg" alt="Bug Screenshot Example" style="max-width: 100%; height: auto; border: 1px solid #ccc;">
-                    <p style="margin-top: 10px;"><em>Screenshot: pogledam-ono-kurac-24.jpg - Example of visual evidence for bug report</em></p>
+                <div style="margin: 20px 0;">
+                    <p><strong>Screenshot 1: Product card WITH delivery information displayed</strong></p>
+                    <img src="../screenshots/bug_1_screenshot1.png" alt="Product card showing delivery information" style="max-width: 100%; height: auto; border: 1px solid #ccc; margin-bottom: 20px;">
+                    <p style="margin-bottom: 30px;"><em>This product card displays delivery date directly: "Delivery Dec 16 - 29"</em></p>
+                    
+                    <p><strong>Screenshot 2: Product card WITHOUT delivery information (requires clicking "See All Buying Options")</strong></p>
+                    <img src="../screenshots/bug_1_screenshot2.png" alt="Product card missing delivery information" style="max-width: 100%; height: auto; border: 1px solid #ccc; margin-bottom: 20px;">
+                    <p style="margin-bottom: 30px;"><em>This product card shows "No featured offers available" and hides delivery information until user clicks "See All Buying Options"</em></p>
                 </div>
-                <pre>[Console logs or error messages if applicable]</pre>
 
                 <h3>Suggested Fix</h3>
-                <p>[Optional: Technical suggestion for how to fix the issue]</p>
+                <p>Display estimated delivery date for the default/featured offer on all product cards in search results. For products with multiple sellers, show delivery information for the default selected seller (e.g., Amazon.com or the Buy Box winner). This would maintain consistency with products that currently show delivery information.</p>
 
                 <h3>Additional Notes</h3>
-                <p>[Any other relevant information]</p>
+                <p>This appears to be more prevalent with products that have "No featured offers available" or multiple third-party sellers. Products sold and shipped by Amazon typically display delivery information consistently. The inconsistency may be intentional design for marketplace items, but from a UX perspective, it creates an inconsistent experience.</p>
             </div>
 
             <h2>Defect Summary</h2>
             
             <div class="card">
-                <p><em>This section will be populated after test execution with a summary of all discovered defects.</em></p>
+                <p>During testing of Amazon's product search functionality, <strong>1 defect</strong> was discovered and documented below.</p>
                 
                 <h3>Bug Statistics</h3>
                 <table>
@@ -164,28 +172,28 @@
                     <tbody>
                         <tr>
                             <td><span class="badge badge-critical">Critical</span></td>
-                            <td>-</td>
+                            <td>0</td>
                             <td>-</td>
                         </tr>
                         <tr>
                             <td><span class="badge badge-high">High</span></td>
-                            <td>-</td>
+                            <td>0</td>
                             <td>-</td>
                         </tr>
                         <tr>
                             <td><span class="badge badge-medium">Medium</span></td>
-                            <td>-</td>
-                            <td>-</td>
+                            <td>1</td>
+                            <td>Open</td>
                         </tr>
                         <tr>
                             <td><span class="badge badge-low">Low</span></td>
-                            <td>-</td>
+                            <td>0</td>
                             <td>-</td>
                         </tr>
                         <tr style="font-weight: 600;">
                             <td>TOTAL</td>
-                            <td>-</td>
-                            <td>-</td>
+                            <td>1</td>
+                            <td>1 Open</td>
                         </tr>
                     </tbody>
                 </table>
