@@ -56,7 +56,7 @@ amazon-qa-homework/
 
 1. **Navigate to project directory**
    ```bash
-   cd amazon-qa-homework
+   cd aws-testing-homework
    ```
 
 2. **Install dependencies**
