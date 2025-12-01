@@ -54,111 +54,7 @@
             <!-- BUG-001 -->
             <div class="bug">
                 <div class="bug-header">
-                    <span class="bug-id">BUG-001: Inconsistent Delivery Information Display on Product Cards</span>
-                    <div>
-                        <span class="badge badge-medium">Medium Severity</span>
-                        <span class="badge badge-low">Low Priority</span>
-                    </div>
-                </div>
-
-                <table style="margin-top: 15px;">
-                    <tr>
-                        <th style="width: 200px;">Bug ID</th>
-                        <td>BUG-001</td>
-                    </tr>
-                    <tr>
-                        <th>Summary</th>
-                        <td>Some product cards do not display delivery information on search results page</td>
-                    </tr>
-                    <tr>
-                        <th>Reported By</th>
-                        <td>QA Engineer</td>
-                    </tr>
-                    <tr>
-                        <th>Date Reported</th>
-                        <td>November 30, 2025</td>
-                    </tr>
-                    <tr>
-                        <th>Status</th>
-                        <td>Open</td>
-                    </tr>
-                    <tr>
-                        <th>Severity</th>
-                        <td><span class="badge badge-medium">Medium</span></td>
-                    </tr>
-                    <tr>
-                        <th>Priority</th>
-                        <td><span class="badge badge-low">Low</span></td>
-                    </tr>
-                    <tr>
-                        <th>Related Test Case</th>
-                        <td><a href="test-cases.html#TC-007">TC-007: Product Card Displays Required Information</a></td>
-                    </tr>
-                    <tr>
-                        <th>Environment</th>
-                        <td>
-                            <strong>OS:</strong> Windows 10<br>
-                            <strong>Browser:</strong> Chrome (Chromium)<br>
-                            <strong>URL:</strong> https://www.amazon.com/s?k=wireless+mouse<br>
-                            <strong>Date:</strong> November 30, 2025
-                        </td>
-                    </tr>
-                </table>
-
-                <h3>Description</h3>
-                <p>While testing product card information display (TC-007), an inconsistency was discovered where some products show delivery information directly on the search results page product cards, while others do not display this information until the user clicks "See All Buying Options".</p>
-
-                <h3>Steps to Reproduce</h3>
-                <ol>
-                    <li>Navigate to https://www.amazon.com</li>
-                    <li>Search for "wireless mouse"</li>
-                    <li>Observe product cards on the search results page</li>
-                    <li>Compare delivery information display across multiple products</li>
-                    <li>Note that some products show delivery dates (e.g., "Delivery Dec 16-29") while others show "No featured offers available"</li>
-                    <li>Click "See All Buying Options" on products without delivery info</li>
-                    <li>Observe that delivery information IS available, but only shown after this additional click</li>
-                </ol>
-
-                <h3>Expected Result</h3>
-                <p>All product cards should consistently display delivery information on the search results page to allow users to easily compare delivery times when making purchase decisions. This is a critical factor for customer decision-making and should be presented uniformly across all products.</p>
-
-                <h3>Actual Result</h3>
-                <p>Delivery information display is inconsistent:<br>
-                • Some products display delivery dates directly on product cards (e.g., "Delivery Wednesday, December 10")<br>
-                • Other products show "No featured offers available" without delivery information<br>
-                • Delivery information for the latter category is only revealed after clicking "See All Buying Options"
-                </p>
-
-                <h3>Impact</h3>
-                <ul>
-                    <li><strong>User Impact:</strong> Users cannot easily compare delivery times across products without additional clicks. This creates friction in the shopping experience and may lead to suboptimal purchase decisions.</li>
-                    <li><strong>Business Impact:</strong> Potential reduction in conversion rates due to increased cognitive load and extra steps required to access critical purchase information.</li>
-                    <li><strong>Frequency:</strong> Occurs consistently for products with multiple sellers or marketplace items (approximately 20-30% of search results)</li>
-                    <li><strong>Workaround Available:</strong> Yes - users can click "See All Buying Options" to view delivery information, but this requires additional interaction</li>
-                </ul>
-
-                <h3>Screenshots/Evidence</h3>
-                <div style="margin: 20px 0;">
-                    <p><strong>Screenshot 1: Product card WITH delivery information displayed</strong></p>
-                    <img src="../screenshots/bug_1_screenshot1.png" alt="Product card showing delivery information" style="max-width: 100%; height: auto; border: 1px solid #ccc; margin-bottom: 20px;">
-                    <p style="margin-bottom: 30px;"><em>This product card displays delivery date directly: "Delivery Dec 16 - 29"</em></p>
-                    
-                    <p><strong>Screenshot 2: Product card WITHOUT delivery information (requires clicking "See All Buying Options")</strong></p>
-                    <img src="../screenshots/bug_1_screenshot2.png" alt="Product card missing delivery information" style="max-width: 100%; height: auto; border: 1px solid #ccc; margin-bottom: 20px;">
-                    <p style="margin-bottom: 30px;"><em>This product card shows "No featured offers available" and hides delivery information until user clicks "See All Buying Options"</em></p>
-                </div>
-
-                <h3>Suggested Fix</h3>
-                <p>Display estimated delivery date for the default/featured offer on all product cards in search results. For products with multiple sellers, show delivery information for the default selected seller (e.g., Amazon.com or the Buy Box winner). This would maintain consistency with products that currently show delivery information.</p>
-
-                <h3>Additional Notes</h3>
-                <p>This appears to be more prevalent with products that have "No featured offers available" or multiple third-party sellers. Products sold and shipped by Amazon typically display delivery information consistently. The inconsistency may be intentional design for marketplace items, but from a UX perspective, it creates an inconsistent experience.</p>
-            </div>
-
-            <!-- BUG-002 -->
-            <div class="bug">
-                <div class="bug-header">
-                    <span class="bug-id">BUG-002: Price Sorting Does Not Display Products in Strict Ascending Order</span>
+                    <span class="bug-id">BUG-001: Price Sorting Does Not Display Products in Strict Ascending Order</span>
                     <div>
                         <span class="badge badge-medium">Medium Severity</span>
                         <span class="badge badge-medium">Medium Priority</span>
@@ -168,7 +64,7 @@
                 <table style="margin-top: 15px;">
                     <tr>
                         <th style="width: 200px;">Bug ID</th>
-                        <td>BUG-002</td>
+                        <td>BUG-001</td>
                     </tr>
                     <tr>
                         <th>Summary</th>
@@ -180,7 +76,7 @@
                     </tr>
                     <tr>
                         <th>Reported By</th>
-                        <td>QA Engineer</td>
+                        <td>Pavle Stefanovic</td>
                     </tr>
                     <tr>
                         <th>Date Reported</th>
@@ -288,10 +184,10 @@
                 <p>Similar issues may exist with other sort options (Price: High to Low, Customer Reviews, etc.) and should be investigated.</p>
             </div>
 
-            <!-- BUG-003 -->
+            <!-- BUG-002 -->
             <div class="bug">
                 <div class="bug-header">
-                    <span class="bug-id">BUG-003: Search with Special Characters Returns Unrelated Results</span>
+                    <span class="bug-id">BUG-002: Search with Special Characters Returns Unrelated Results</span>
                     <div>
                         <span class="badge badge-low">Low Severity</span>
                         <span class="badge badge-low">Low Priority</span>
@@ -301,7 +197,7 @@
                 <table style="margin-top: 15px;">
                     <tr>
                         <th style="width: 200px;">Bug ID</th>
-                        <td>BUG-003</td>
+                        <td>BUG-002</td>
                     </tr>
                     <tr>
                         <th>Summary</th>
@@ -313,7 +209,7 @@
                     </tr>
                     <tr>
                         <th>Reported By</th>
-                        <td>QA Engineer</td>
+                        <td>Pavle Stefanovic</td>
                     </tr>
                     <tr>
                         <th>Date Reported</th>
@@ -429,10 +325,10 @@
                 <p><strong>Related Testing:</strong> Should also test combinations like: <code>@@@</code>, <code>***</code>, <code>###</code>, mixed special characters with spaces, etc.</p>
             </div>
 
-            <!-- BUG-004 -->
+            <!-- BUG-003 -->
             <div class="bug">
                 <div class="bug-header">
-                    <span class="bug-id">BUG-004: Price Filter Shows Products Outside Selected Price Range After Discount</span>
+                    <span class="bug-id">BUG-003: Price Filter Shows Products Outside Selected Price Range After Discount</span>
                     <div>
                         <span class="badge badge-medium">Medium Severity</span>
                         <span class="badge badge-medium">Medium Priority</span>
@@ -442,7 +338,7 @@
                 <table style="margin-top: 15px;">
                     <tr>
                         <th style="width: 200px;">Bug ID</th>
-                        <td>BUG-004</td>
+                        <td>BUG-003</td>
                     </tr>
                     <tr>
                         <th>Summary</th>
@@ -454,7 +350,7 @@
                     </tr>
                     <tr>
                         <th>Reported By</th>
-                        <td>QA Engineer</td>
+                        <td>Pavle Stefanovic</td>
                     </tr>
                     <tr>
                         <th>Date Reported</th>
@@ -578,7 +474,7 @@
             <h2>Defect Summary</h2>
             
             <div class="card">
-                <p>During testing of Amazon's product search functionality, <strong>4 defects</strong> were discovered and documented below.</p>
+                <p>During testing of Amazon's product search functionality, <strong>3 defects</strong> were discovered and documented below.</p>
                 
                 <h3>Bug Statistics</h3>
                 <table>
@@ -602,8 +498,8 @@
                         </tr>
                         <tr>
                             <td><span class="badge badge-medium">Medium</span></td>
-                            <td>3</td>
-                            <td>Open (3)</td>
+                            <td>2</td>
+                            <td>Open (2)</td>
                         </tr>
                         <tr>
                             <td><span class="badge badge-low">Low</span></td>
@@ -612,8 +508,8 @@
                         </tr>
                         <tr style="font-weight: 600;">
                             <td>TOTAL</td>
-                            <td>4</td>
-                            <td>1 Open</td>
+                            <td>3</td>
+                            <td>3 Open</td>
                         </tr>
                     </tbody>
                 </table>

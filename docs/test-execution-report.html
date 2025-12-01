@@ -39,7 +39,7 @@
                 <p><strong>Project:</strong> Amazon Product Search Testing</p>
                 <p><strong>Test Scope:</strong> Product search functionality and search results page</p>
                 <p><strong>Testing Period:</strong> November 30 - December 1, 2025</p>
-                <p><strong>Tester:</strong> QA Engineer</p>
+                <p><strong>Tester:</strong> Pavle Stefanovic</p>
                 <p><strong>Environment:</strong> Windows 10, Chromium Browser (Playwright)</p>
                 
                 <h3>Overall Test Results</h3>
@@ -151,7 +151,7 @@
                             <td>Product Card Displays Required Information</td>
                             <td><span class="badge" style="background-color: green;">PASSED</span></td>
                             <td>Part of overall suite</td>
-                            <td>All assertions passed. Delivery info check made optional due to <a href="bug-report.html#BUG-001">BUG-001</a>.</td>
+                            <td>All assertions passed. Product cards display required information (title, image, price, rating, review count).</td>
                         </tr>
                         <tr>
                             <td><a href="test-cases.html#TC-008">TC-008</a></td>
@@ -172,14 +172,14 @@
                             <td>Verify Sort by Price - Low to High</td>
                             <td><span class="badge" style="background-color: red;">FAILED</span></td>
                             <td>Part of overall suite</td>
-                            <td>Failed: Products not in strict ascending order ($5.56 after $6.64). Documented as <a href="bug-report.html#BUG-002">BUG-002</a> - usability issue with sponsored products.</td>
+                            <td>Failed: Products not in strict ascending order ($5.56 after $6.64). Documented as <a href="bug-report.html#BUG-001">BUG-001</a> - usability issue with sponsored products.</td>
                         </tr>
                         <tr>
                             <td><a href="test-cases.html#TC-011">TC-011</a></td>
                             <td>Verify Sort by Price - High to Low</td>
                             <td><span class="badge" style="background-color: red;">FAILED</span></td>
                             <td>Part of overall suite</td>
-                            <td>Failed: Products not in strict descending order ($21.89 after $11.29). Related to <a href="bug-report.html#BUG-002">BUG-002</a>.</td>
+                            <td>Failed: Products not in strict descending order ($21.89 after $11.29). Related to <a href="bug-report.html#BUG-001">BUG-001</a>.</td>
                         </tr>
                     </tbody>
                 </table>
@@ -203,56 +203,56 @@
                             <td><a href="test-cases.html#TC-003">TC-003</a></td>
                             <td>Search with Special Characters</td>
                             <td><span class="badge" style="background-color: green;">PASSED</span></td>
-                            <td>QA Engineer</td>
-                            <td>Completed. Normal searches with special chars work correctly (e.g., "32\" monitor", "usb-c cable"). Only special character searches return unrelated results - documented as <a href="bug-report.html#BUG-003">BUG-003</a>.</td>
+                            <td>Pavle Stefanovic</td>
+                            <td>Completed. Normal searches with special chars work correctly (e.g., "32\" monitor", "usb-c cable"). Only special character searches return unrelated results - documented as <a href="bug-report.html#BUG-002">BUG-002</a>.</td>
                         </tr>
                         <tr>
                             <td><a href="test-cases.html#TC-004">TC-004</a></td>
                             <td>Empty Search Validation</td>
                             <td><span class="badge" style="background-color: green;">PASSED</span></td>
-                            <td>QA Engineer</td>
+                            <td>Pavle Stefanovic</td>
                             <td>Empty search refreshes page without navigating to results. No error or unintended behavior.</td>
                         </tr>
                         <tr>
                             <td><a href="test-cases.html#TC-012">TC-012</a></td>
                             <td>Handle Price Ranges</td>
                             <td><span class="badge" style="background-color: red;">FAILED</span></td>
-                            <td>QA Engineer</td>
-                            <td>Bug found: Products with sale prices outside filter range displayed if original price is within range. See <a href="bug-report.html#BUG-004">BUG-004</a></td>
+                            <td>Pavle Stefanovic</td>
+                            <td>Bug found: Products with sale prices outside filter range displayed if original price is within range. See <a href="bug-report.html#BUG-003">BUG-003</a></td>
                         </tr>
                         <tr>
                             <td><a href="test-cases.html#TC-013">TC-013</a></td>
                             <td>Results Relevance Check</td>
                             <td><span class="badge" style="background-color: green;">PASSED</span></td>
-                            <td>QA Engineer</td>
+                            <td>Pavle Stefanovic</td>
                             <td>All results relevant to "wireless mouse". Sponsored results properly labeled. No irrelevant products found.</td>
                         </tr>
                         <tr>
                             <td><a href="test-cases.html#TC-014">TC-014</a></td>
                             <td>Search Suggestions/Autocomplete</td>
                             <td><span class="badge" style="background-color: green;">PASSED</span></td>
-                            <td>QA Engineer</td>
+                            <td>Pavle Stefanovic</td>
                             <td>Search suggestions appear correctly for partial terms ("wire", "gam", "lapt"). Suggestions are relevant and update dynamically. User can navigate and select suggestions.</td>
                         </tr>
                         <tr>
                             <td><a href="test-cases.html#TC-015">TC-015</a></td>
                             <td>Very Long Search String</td>
                             <td><span class="badge" style="background-color: green;">PASSED</span></td>
-                            <td>QA Engineer</td>
+                            <td>Pavle Stefanovic</td>
                             <td>256-char Lorem Ipsum search completed without errors. Returned only 3 results (unrelated products). No UI breaking, layout issues, or crashes. System handles extreme input gracefully.</td>
                         </tr>
                         <tr>
                             <td><a href="test-cases.html#TC-016">TC-016</a></td>
                             <td>Search with Only Numbers</td>
                             <td><span class="badge" style="background-color: green;">PASSED</span></td>
-                            <td>QA Engineer</td>
+                            <td>Pavle Stefanovic</td>
                             <td>Numeric searches work correctly: "12345" returns relevant products, "2024" returns year-related content. ASIN "B08N5WRWNW" returns results but doesn't perform exact ASIN matching (treated as regular search term). No errors or crashes.</td>
                         </tr>
                         <tr>
                             <td><a href="test-cases.html#TC-017">TC-017</a></td>
                             <td>Page Load Performance</td>
                             <td><span class="badge" style="background-color: green;">PASSED</span></td>
-                            <td>QA Engineer</td>
+                            <td>Pavle Stefanovic</td>
                             <td>Search results page loads within acceptable time. Product images load progressively. No significant delays or freezing. Page is usable before all images load. Performance is acceptable for user experience.</td>
                         </tr>
                     </tbody>
@@ -262,7 +262,7 @@
             <h2>Defects Summary</h2>
             
             <div class="card">
-                <p><strong>Total Defects Found:</strong> 4</p>
+                <p><strong>Total Defects Found:</strong> 3</p>
                 
                 <table>
                     <thead>
@@ -277,27 +277,20 @@
                     <tbody>
                         <tr>
                             <td><a href="bug-report.html#BUG-001">BUG-001</a></td>
-                            <td>Inconsistent Delivery Information Display on Product Cards</td>
-                            <td><span class="badge badge-medium">Medium</span></td>
-                            <td>Open</td>
-                            <td>TC-007 (Automated)</td>
-                        </tr>
-                        <tr>
-                            <td><a href="bug-report.html#BUG-002">BUG-002</a></td>
                             <td>Price Sorting Does Not Display Products in Strict Order</td>
                             <td><span class="badge badge-medium">Medium</span></td>
                             <td>Open</td>
                             <td>TC-010 (Automated)</td>
                         </tr>
                         <tr>
-                            <td><a href="bug-report.html#BUG-003">BUG-003</a></td>
+                            <td><a href="bug-report.html#BUG-002">BUG-002</a></td>
                             <td>Search with Special Characters Returns Unrelated Results</td>
                             <td><span class="badge badge-low">Low</span></td>
                             <td>Open</td>
                             <td>TC-003 (Manual)</td>
                         </tr>
                         <tr>
-                            <td><a href="bug-report.html#BUG-004">BUG-004</a></td>
+                            <td><a href="bug-report.html#BUG-003">BUG-003</a></td>
                             <td>Price Filter Shows Products Outside Selected Range After Discount</td>
                             <td><span class="badge badge-medium">Medium</span></td>
                             <td>Open</td>
@@ -382,18 +375,16 @@
 
                 <h3>Issues Identified</h3>
                 <ul>
-                    <li>⚠️ <strong>BUG-001:</strong> Delivery information not consistently displayed on all product cards (Medium severity)</li>
-                    <li>⚠️ <strong>BUG-002:</strong> Price sorting doesn't display products in strict numerical order due to sponsored products and complex algorithm (Medium severity)</li>
-                    <li>⚠️ <strong>BUG-003:</strong> Searching with only special characters returns unrelated results instead of validation error (Low severity)</li>
-                    <li>⚠️ <strong>BUG-004:</strong> Price filter shows products outside selected range when sale price differs from original price (Medium severity)</li>
+                    <li>⚠️ <strong>BUG-001:</strong> Price sorting doesn't display products in strict numerical order due to sponsored products and complex algorithm (Medium severity)</li>
+                    <li>⚠️ <strong>BUG-002:</strong> Searching with only special characters returns unrelated results instead of validation error (Low severity)</li>
+                    <li>⚠️ <strong>BUG-003:</strong> Price filter shows products outside selected range when sale price differs from original price (Medium severity)</li>
                 </ul>
 
                 <h3>Recommendations</h3>
                 <ol>
-                    <li><strong>BUG-001:</strong> Standardize delivery information display across all product types or clearly indicate why it's not available</li>
-                    <li><strong>BUG-002:</strong> Consider adding user messaging about sponsored products affecting sort order, or implement stricter price-based sorting</li>
-                    <li><strong>BUG-003:</strong> Add input validation for special character-only searches with helpful error messages</li>
-                    <li><strong>BUG-004:</strong> Price filters should apply to displayed/current price (including discounts), not original price. Or clearly indicate filtering logic to users</li>
+                    <li><strong>BUG-001:</strong> Consider adding user messaging about sponsored products affecting sort order, or implement stricter price-based sorting</li>
+                    <li><strong>BUG-002:</strong> Add input validation for special character-only searches with helpful error messages</li>
+                    <li><strong>BUG-003:</strong> Price filters should apply to displayed/current price (including discounts), not original price. Or clearly indicate filtering logic to users</li>
                     <li><strong>Test Automation:</strong> Continue expanding automation coverage for regression testing</li>
                     <li><strong>Performance Testing:</strong> Consider load testing search functionality under high traffic</li>
                 </ol>
@@ -431,13 +422,13 @@
             <div class="card">
                 <p>Overall, Amazon's product search functionality demonstrates <strong>solid performance</strong> with an <strong>81% pass rate</strong>. The core search, pagination, navigation, and autocomplete features work reliably. Search relevance is excellent with properly labeled sponsored results. Page load performance is acceptable with progressive image loading. The system handles edge cases well, including extremely long search strings and numeric-only searches. The three failed tests (TC-010, TC-011, TC-012) identified legitimate usability and functional issues that affect user experience.</p>
                 
-                <p>The four defects identified include both <strong>usability concerns</strong> (BUG-002, BUG-003) and <strong>functional bugs</strong> (BUG-001, BUG-004). All issues have been documented with detailed reproduction steps, screenshots, and suggested fixes following ISTQB standards.</p>
+                <p>The three defects identified include both <strong>usability concerns</strong> (BUG-001, BUG-002) and <strong>functional bugs</strong> (BUG-003). All issues have been documented with detailed reproduction steps, screenshots, and suggested fixes following ISTQB standards.</p>
                 
                 <p><strong>Test Coverage:</strong> 100% of planned test cases executed (16/16)</p>
                 <p><strong>Automation Coverage:</strong> 56% (9 out of 16 tests automated)</p>
                 <p><strong>Total Execution Time:</strong> 93.38 seconds for automated suite</p>
-                <p><strong>Defects Found:</strong> 4 defects (3 Medium, 1 Low severity)</p>
-                <p><strong>Recommendation:</strong> Address BUG-004 (price filter logic) and BUG-001 (delivery info inconsistency) before next release. BUG-002 and BUG-003 should be reviewed by product/UX team for prioritization.</p>
+                <p><strong>Defects Found:</strong> 3 defects (2 Medium, 1 Low severity)</p>
+                <p><strong>Recommendation:</strong> Address BUG-003 (price filter logic) before next release. BUG-001 and BUG-002 should be reviewed by product/UX team for prioritization.</p>
             </div>
 
         </main>
