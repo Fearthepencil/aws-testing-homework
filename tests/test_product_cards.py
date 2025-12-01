@@ -1,6 +1,7 @@
 from pages.search_results_page import SearchResultsPage
 from pages.home_page import HomePage
 
+
 # TC-007: Product cards display correctly
 def test_product_cards(page, search_terms):
     search_term = search_terms["default_search_term"]
@@ -10,7 +11,7 @@ def test_product_cards(page, search_terms):
     search_results_page = SearchResultsPage(page)
     page.wait_for_selector('[data-component-type="s-search-result"]', timeout=5000)
 
-    product_cards = search_results_page.getProductCards()
+    product_cards = search_results_page.get_product_card_data()
     assert len(product_cards) > 0, "No product cards found"
 
     for card in product_cards:

@@ -14,6 +14,7 @@ def test_amazon_search(page, search_terms):
 
     # check product count
     page.wait_for_selector('[data-component-type="s-search-result"]', timeout=5000)
+    page.wait_for_timeout(2000)
     product_cards = page.locator('[data-component-type="s-search-result"]')
     assert product_cards.count() > 0, "No product cards found"
     assert (
@@ -23,7 +24,6 @@ def test_amazon_search(page, search_terms):
     # check first product title
     first_product_title = product_cards.first.locator("h2 span").text_content().lower()
     assert "wireless" in first_product_title or "mouse" in first_product_title
-
     # take screenshot
     home_page.take_screenshot(f"search_results_{search_term}")
 

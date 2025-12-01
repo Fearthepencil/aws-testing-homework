@@ -2,6 +2,7 @@ from pages.search_results_page import SearchResultsPage
 from pages.home_page import HomePage
 
 
+# TC-005: Navigate to page 2
 def test_pagination(page, search_terms):
     search_term = search_terms["default_search_term"]
     home_page = HomePage(page)
@@ -11,19 +12,19 @@ def test_pagination(page, search_terms):
 
     # click on next page
     page.wait_for_selector(".s-pagination-next", timeout=5000)
-    product_titles = search_results_page.getProductTitles()
-    search_results_page.goNextPage()
+    product_titles = search_results_page.get_product_titles()
+    search_results_page.go_next_page()
 
     # check page number and URL
     assert (
-        search_results_page.currentPageNumber() == "2"
-    ), f"Expected page 2, but got {search_results_page.currentPageNumber()}"
+        search_results_page.current_page_number() == "2"
+    ), f"Expected page 2, but got {search_results_page.current_page_number()}"
     assert "page=2" in page.url, f"Expected page=2 in URL, but got {page.url}"
 
     # check product titles
     assert (
-        search_results_page.getProductTitles() != product_titles
-    ), f"Expected different product titles, but got {search_results_page.getProductTitles()}"
+        search_results_page.get_product_titles() != product_titles
+    ), f"Expected different product titles, but got {search_results_page.get_product_titles()}"
 
     # check search term
     search_box = page.locator("#twotabsearchtextbox, #nav-bb-search").first
@@ -32,6 +33,7 @@ def test_pagination(page, search_terms):
     ), f"Expected {search_term} in search box, but got {search_box.input_value()}"
 
 
+# TC-006: Navigate to page 3
 def test_pagination_with_multiple_pages(page, search_terms):
     search_term = search_terms["default_search_term"]
     home_page = HomePage(page)
@@ -41,22 +43,22 @@ def test_pagination_with_multiple_pages(page, search_terms):
 
     # click on next page
     page.wait_for_selector(".s-pagination-next", timeout=5000)
-    product_titles_page_1 = search_results_page.getProductTitles()
-    search_results_page.goNextPage()
+    product_titles_page_1 = search_results_page.get_product_titles()
+    search_results_page.go_next_page()
 
     # click on next page
     page.wait_for_selector(".s-pagination-next", timeout=5000)
-    product_titles_page_2 = search_results_page.getProductTitles()
-    search_results_page.goNextPage()
+    product_titles_page_2 = search_results_page.get_product_titles()
+    search_results_page.go_next_page()
 
     # check page number and URL
     assert (
-        search_results_page.currentPageNumber() == "3"
-    ), f"Expected page 3, but got {search_results_page.currentPageNumber()}"
+        search_results_page.current_page_number() == "3"
+    ), f"Expected page 3, but got {search_results_page.current_page_number()}"
     assert "page=3" in page.url, f"Expected page=3 in URL, but got {page.url}"
 
     # check product titles
-    page_3_titles = search_results_page.getProductTitles()
+    page_3_titles = search_results_page.get_product_titles()
     assert (
         page_3_titles != product_titles_page_1
         and page_3_titles != product_titles_page_2

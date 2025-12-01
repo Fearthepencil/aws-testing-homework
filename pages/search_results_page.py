@@ -5,14 +5,14 @@ class SearchResultsPage(BasePage):
     def __init__(self, page):
         super().__init__(page)
 
-    def goNextPage(self):
+    def go_next_page(self):
         self.page.locator(".s-pagination-next").click()
 
-    def currentPageNumber(self) -> str:
+    def current_page_number(self) -> str:
         current_page = self.page.locator(".s-pagination-selected").text_content()
         return current_page.strip()
 
-    def getProductTitles(self) -> list[str]:
+    def get_product_titles(self) -> list[str]:
         product_cards = self.page.locator('[data-component-type="s-search-result"]')
         titles = []
         for i in range(product_cards.count()):
@@ -20,7 +20,7 @@ class SearchResultsPage(BasePage):
             titles.append(title.strip())
         return titles
 
-    def getProductCards(self) -> list[dict]:
+    def get_product_card_data(self) -> list[dict]:
         product_cards = self.page.locator('[data-component-type="s-search-result"]')
         cards = []
         for i in range(product_cards.count()):
