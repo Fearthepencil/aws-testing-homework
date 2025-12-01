@@ -104,10 +104,10 @@ PAGE 3 - Products: 12, Average: $28.66
 ## 📊 Test Coverage
 
 ### Test Summary
-- **Total Test Cases:** 16
-- **Automated:** 9 tests (56%)
-- **Manual:** 7 tests (44%)
-- **Pass Rate:** 81% (13 passed, 3 failed)
+- **Total Test Cases:** 17
+- **Automated:** 9 tests (53%)
+- **Manual:** 8 tests (47%)
+- **Pass Rate:** 82% (14 passed, 3 failed)
 - **Defects Found:** 3 bugs
 
 ### Automated Tests (9)
@@ -121,7 +121,7 @@ PAGE 3 - Products: 12, Average: $28.66
 - ❌ TC-010: Sort by price - Low to High (BUG-001)
 - ❌ TC-011: Sort by price - High to Low (BUG-001)
 
-### Manual Tests (7)
+### Manual Tests (8)
 - ✅ TC-003: Search with special characters
 - ✅ TC-004: Empty search validation
 - ❌ TC-012: Handle price ranges (BUG-003)
