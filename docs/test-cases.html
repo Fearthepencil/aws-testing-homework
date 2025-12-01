@@ -54,7 +54,7 @@
                             <td>8</td>
                         </tr>
                         <tr>
-                            <td>Price Calculation</td>
+                            <td>Price Calculation & Sorting</td>
                             <td>4</td>
                             <td>1</td>
                             <td>5</td>
@@ -79,7 +79,7 @@
             <div class="card">
                 <ul>
                     <li><a href="#core-functional">Core Functional Tests (TC-001 to TC-008)</a></li>
-                    <li><a href="#price-calculation">Price Calculation Tests (TC-009 to TC-013)</a></li>
+                    <li><a href="#price-calculation">Price Calculation & Sorting Tests (TC-009 to TC-013)</a></li>
                     <li><a href="#quality-usability">Quality & Usability Tests (TC-014 to TC-021)</a></li>
                 </ul>
             </div>
@@ -542,7 +542,7 @@
             </div>
 
             <!-- PRICE CALCULATION TESTS -->
-            <h2 id="price-calculation">Price Calculation Tests</h2>
+            <h2 id="price-calculation">Price Calculation & Sorting Tests</h2>
 
             <!-- TC-009 -->
             <div class="test-case">
@@ -587,6 +587,7 @@
                         • Result is logged to console in format:<br>
                         &nbsp;&nbsp;"PAGE 1 - Products: X, Average: $Y.ZZ"<br>
                         • Average is greater than $0.00
+                        • Average is less than $200.00
                     </p>
                 </div>
 
@@ -609,7 +610,7 @@
             <!-- TC-010 -->
             <div class="test-case">
                 <div class="test-case-header">
-                    <span class="test-case-id">TC-010: Calculate Average Price on Page 2</span>
+                    <span class="test-case-id">TC-010: Verify Sort by Price - Low to High</span>
                     <div>
                         <span class="badge badge-automated">Automated</span>
                         <span class="badge badge-high">High Priority</span>
@@ -618,12 +619,12 @@
 
                 <div class="test-case-section">
                     <h4>Test Objective</h4>
-                    <p>Extract all product prices from page 2 and calculate the average price.</p>
+                    <p>Verify that the "Price: Low to High" sort option correctly orders products in ascending price order.</p>
                 </div>
 
                 <div class="test-case-section">
                     <h4>Preconditions</h4>
-                    <p>User has navigated to page 2 of search results</p>
+                    <p>User has performed a search with results</p>
                 </div>
 
                 <div class="test-case-section">
@@ -633,39 +634,39 @@
 
                 <div class="test-case-section">
                     <h4>Given</h4>
-                    <p>User has navigated to page 2 of search results</p>
+                    <p>User is on search results page with multiple products</p>
                 </div>
 
                 <div class="test-case-section">
                     <h4>When</h4>
-                    <p>System extracts all visible product prices from page 2</p>
+                    <p>User selects "Price: Low to High" from the sort dropdown</p>
                 </div>
 
                 <div class="test-case-section">
                     <h4>Then</h4>
                     <p>
-                        • All prices from page 2 are extracted<br>
-                        • Average price for page 2 is calculated<br>
-                        • Result is logged to console<br>
-                        • Average may differ from page 1
+                        • Page reloads with sorted results<br>
+                        • Products are displayed in ascending price order<br>
+                        • Each product price is less than or equal to the next product price<br>
+                        • URL contains sort parameter (e.g., s=price-asc-rank)
                     </p>
                 </div>
 
                 <div class="test-case-section">
                     <h4>Test Technique</h4>
-                    <p>Data-driven Testing, Calculation Validation</p>
+                    <p>Functional Testing, Data Validation</p>
                 </div>
 
                 <div class="test-case-section">
                     <h4>Risk Coverage</h4>
-                    <p>PR-03: Product prices displayed incorrectly (HIGH risk)</p>
+                    <p>PR-04: Sort functionality not working correctly (MEDIUM risk)</p>
                 </div>
             </div>
 
             <!-- TC-011 -->
             <div class="test-case">
                 <div class="test-case-header">
-                    <span class="test-case-id">TC-011: Calculate Average Price on Page 3</span>
+                    <span class="test-case-id">TC-011: Verify Sort by Price - High to Low</span>
                     <div>
                         <span class="badge badge-automated">Automated</span>
                         <span class="badge badge-high">High Priority</span>
@@ -674,12 +675,12 @@
 
                 <div class="test-case-section">
                     <h4>Test Objective</h4>
-                    <p>Extract all product prices from page 3 and calculate the average price.</p>
+                    <p>Verify that the "Price: High to Low" sort option correctly orders products in descending price order.</p>
                 </div>
 
                 <div class="test-case-section">
                     <h4>Preconditions</h4>
-                    <p>User has navigated to page 3 of search results</p>
+                    <p>User has performed a search with results</p>
                 </div>
 
                 <div class="test-case-section">
@@ -689,32 +690,32 @@
 
                 <div class="test-case-section">
                     <h4>Given</h4>
-                    <p>User has navigated to page 3 of search results</p>
+                    <p>User is on search results page with multiple products</p>
                 </div>
 
                 <div class="test-case-section">
                     <h4>When</h4>
-                    <p>System extracts all visible product prices from page 3</p>
+                    <p>User selects "Price: High to Low" from the sort dropdown</p>
                 </div>
 
                 <div class="test-case-section">
                     <h4>Then</h4>
                     <p>
-                        • All prices from page 3 are extracted<br>
-                        • Average price for page 3 is calculated<br>
-                        • Result is logged to console<br>
-                        • Combined summary shows all 3 page averages
+                        • Page reloads with sorted results<br>
+                        • Products are displayed in descending price order<br>
+                        • Each product price is greater than or equal to the next product price<br>
+                        • URL contains sort parameter (e.g., s=price-desc-rank)
                     </p>
                 </div>
 
                 <div class="test-case-section">
                     <h4>Test Technique</h4>
-                    <p>Data-driven Testing, Calculation Validation</p>
+                    <p>Functional Testing, Data Validation</p>
                 </div>
 
                 <div class="test-case-section">
                     <h4>Risk Coverage</h4>
-                    <p>PR-03: Product prices displayed incorrectly (HIGH risk)</p>
+                    <p>PR-04: Sort functionality not working correctly (MEDIUM risk)</p>
                 </div>
             </div>
 
@@ -1202,15 +1203,15 @@
                         </tr>
                         <tr>
                             <td>TC-010</td>
-                            <td>PR-03</td>
-                            <td>Data-driven</td>
+                            <td>PR-04</td>
+                            <td>Functional Testing</td>
                             <td>Automated</td>
                             <td>High</td>
                         </tr>
                         <tr>
                             <td>TC-011</td>
-                            <td>PR-03</td>
-                            <td>Data-driven</td>
+                            <td>PR-04</td>
+                            <td>Functional Testing</td>
                             <td>Automated</td>
                             <td>High</td>
                         </tr>
