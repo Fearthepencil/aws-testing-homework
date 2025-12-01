@@ -11,7 +11,7 @@ Automated and manual test suite for Amazon's product search functionality, compl
 ## 📋 Project Structure
 
 ```
-amazon-qa-homework/
+aws-testing-homework/
 ├── docs/                      # HTML documentation deliverables
 │   ├── index.html            # Main landing page
 │   ├── test-plan.html        # Test strategy and approach (ISTQB)
