@@ -263,7 +263,7 @@
                 <h3>Evidence</h3>
                 <div style="margin: 20px 0;">
                     <p><strong>Screenshot: Search results sorted by "Price: Low to High" showing incorrect order</strong></p>
-                    <img src="../screenshots/bug_2_sort_issue.png" alt="Price sort showing products out of order" style="max-width: 100%; height: auto; border: 1px solid #ccc; margin-bottom: 20px;">
+                    <img src="../screenshots/bug_2_screenshot1.png" alt="Price sort showing products out of order" style="max-width: 100%; height: auto; border: 1px solid #ccc; margin-bottom: 20px;">
                     <p><em>URL contains s=price-asc-rank parameter, confirming sort was applied, but products are not in ascending price order</em></p>
                 </div>
 
@@ -288,10 +288,297 @@
                 <p>Similar issues may exist with other sort options (Price: High to Low, Customer Reviews, etc.) and should be investigated.</p>
             </div>
 
+            <!-- BUG-003 -->
+            <div class="bug">
+                <div class="bug-header">
+                    <span class="bug-id">BUG-003: Search with Special Characters Returns Unrelated Results</span>
+                    <div>
+                        <span class="badge badge-low">Low Severity</span>
+                        <span class="badge badge-low">Low Priority</span>
+                    </div>
+                </div>
+
+                <table style="margin-top: 15px;">
+                    <tr>
+                        <th style="width: 200px;">Bug ID</th>
+                        <td>BUG-003</td>
+                    </tr>
+                    <tr>
+                        <th>Summary</th>
+                        <td>When searching with only special characters, Amazon returns unrelated results instead of handling the invalid input appropriately</td>
+                    </tr>
+                    <tr>
+                        <th>Type</th>
+                        <td>Usability Issue / Input Validation</td>
+                    </tr>
+                    <tr>
+                        <th>Reported By</th>
+                        <td>QA Engineer</td>
+                    </tr>
+                    <tr>
+                        <th>Date Reported</th>
+                        <td>December 1, 2025</td>
+                    </tr>
+                    <tr>
+                        <th>Status</th>
+                        <td>Open</td>
+                    </tr>
+                    <tr>
+                        <th>Severity</th>
+                        <td><span class="badge badge-low">Low</span> - Minor usability concern, edge case scenario</td>
+                    </tr>
+                    <tr>
+                        <th>Priority</th>
+                        <td><span class="badge badge-low">Low</span> - Rare user scenario, low business impact</td>
+                    </tr>
+                    <tr>
+                        <th>Related Test Case</th>
+                        <td><a href="test-cases.html#TC-003">TC-003: Search with Special Characters</a> (Manual Test)</td>
+                    </tr>
+                    <tr>
+                        <th>Environment</th>
+                        <td>
+                            <strong>OS:</strong> Windows 10<br>
+                            <strong>Browser:</strong> Chrome<br>
+                            <strong>URL:</strong> https://www.amazon.com<br>
+                            <strong>Date:</strong> December 1, 2025
+                        </td>
+                    </tr>
+                </table>
+
+                <h3>Description</h3>
+                <p>When users enter only special characters (e.g., !@#$%) into the search box, Amazon returns seemingly random, unrelated results (movies, books, etc.) instead of providing appropriate feedback about the invalid search input.</p>
+                
+                <p>This behavior may confuse users who accidentally type special characters or expect the system to validate their input and provide helpful guidance.</p>
+
+                <h3>Steps to Reproduce</h3>
+                <ol>
+                    <li>Navigate to Amazon.com</li>
+                    <li>Click on the search box</li>
+                    <li>Enter only special characters: <code>!@#$%</code></li>
+                    <li>Press Enter or click the search button</li>
+                    <li>Observe the search results</li>
+                </ol>
+
+                <h3>Expected Result</h3>
+                <p>One of the following behaviors would be more user-friendly:</p>
+                <ul>
+                    <li><strong>Option 1:</strong> Display "No results found" message with suggestion to try different search terms</li>
+                    <li><strong>Option 2:</strong> Show validation message: "Please enter valid search terms" or "Special characters only searches are not supported"</li>
+                    <li><strong>Option 3:</strong> Strip special characters and show message: "Searching for: [empty]" with no results</li>
+                    <li><strong>Option 4:</strong> Prevent search submission when only special characters are entered</li>
+                </ul>
+
+                <h3>Actual Result</h3>
+                <p>Amazon returns search results that appear to be unrelated to the special characters entered. Results include:</p>
+                <ul>
+                    <li>Movies (Gen V, After The Hunt, Red One, The Mighty Nein, etc.)</li>
+                    <li>Books (Unreasonable Hospitality)</li>
+                    <li>TV Shows (Harlan Coben's Lazarus, Fallout, etc.)</li>
+                </ul>
+                <p>The URL shows: <code>https://www.amazon.com/s?k=!@#$%</code></p>
+                <p>No indication is given to the user that their search input was invalid or that results are unrelated to their query.</p>
+
+                <h3>Impact</h3>
+                <ul>
+                    <li><strong>User Confusion:</strong> Users may be confused why they're seeing unrelated results</li>
+                    <li><strong>Wasted Time:</strong> Users may browse through irrelevant results before realizing their search was invalid</li>
+                    <li><strong>Accessibility:</strong> Screen reader users may not understand why results don't match their input</li>
+                    <li><strong>User Trust:</strong> May reduce confidence in search accuracy</li>
+                    <li><strong>Edge Case:</strong> Unlikely to occur frequently in normal usage</li>
+                </ul>
+
+                <h3>Evidence</h3>
+                <div style="margin: 20px 0;">
+                    <p><strong>Screenshot 1: Search results for special characters showing unrelated movies/books</strong></p>
+                    <img src="../screenshots/bug_3_screenshot1.png" alt="Special character search showing unrelated results" style="max-width: 100%; height: auto; border: 1px solid #ccc; margin-bottom: 20px;">
+                    <p><em>Search for "!@#$%" returns movies and books instead of handling invalid input</em></p>
+
+                    <p><strong>Screenshot 2: Additional unrelated results</strong></p>
+                    <img src="../screenshots/bug_3_screenshot2.png" alt="More unrelated results from special character search" style="max-width: 100%; height: auto; border: 1px solid #ccc; margin-bottom: 20px;">
+                    <p><em>Continued results show TV shows and other content with no relation to the search input</em></p>
+                </div>
+
+                <h3>Root Cause Analysis</h3>
+                <p>Possible explanations:</p>
+                <ul>
+                    <li><strong>Default Behavior:</strong> Amazon may be showing "popular items" or "trending content" when search input is invalid</li>
+                    <li><strong>No Input Validation:</strong> Search system accepts any input without validation</li>
+                    <li><strong>Fallback Logic:</strong> System may fall back to showing featured/promoted content when no matches are found</li>
+                    <li><strong>Intentional Design:</strong> May be designed to always show results rather than empty pages</li>
+                </ul>
+
+                <h3>Suggested Fix</h3>
+                <p><strong>Option 1 (Recommended):</strong> Add input validation to detect searches containing only special characters and display a helpful message: "Your search contains only special characters. Please try searching with letters or numbers."</p>
+                
+                <p><strong>Option 2:</strong> Show "No results found" message with search suggestions when only special characters are detected.</p>
+                
+                <p><strong>Option 3:</strong> Strip special characters before searching and inform user: "Searching for: [empty]" with no results displayed.</p>
+
+                <h3>Additional Notes</h3>
+                <p>This is classified as a <strong>Low Severity</strong> usability issue because:</p>
+                <ul>
+                    <li>It's an edge case - most users don't search with only special characters</li>
+                    <li>The system doesn't crash or cause errors</li>
+                    <li>Users can easily correct their search</li>
+                    <li>No data loss or security concerns</li>
+                </ul>
+                
+                <p>However, from a UX perspective, providing clear feedback about invalid input would improve the user experience and reduce confusion. This issue may also affect other special character combinations and should be tested comprehensively.</p>
+                
+                <p><strong>Related Testing:</strong> Should also test combinations like: <code>@@@</code>, <code>***</code>, <code>###</code>, mixed special characters with spaces, etc.</p>
+            </div>
+
+            <!-- BUG-004 -->
+            <div class="bug">
+                <div class="bug-header">
+                    <span class="bug-id">BUG-004: Price Filter Shows Products Outside Selected Price Range After Discount</span>
+                    <div>
+                        <span class="badge badge-medium">Medium Severity</span>
+                        <span class="badge badge-medium">Medium Priority</span>
+                    </div>
+                </div>
+
+                <table style="margin-top: 15px;">
+                    <tr>
+                        <th style="width: 200px;">Bug ID</th>
+                        <td>BUG-004</td>
+                    </tr>
+                    <tr>
+                        <th>Summary</th>
+                        <td>When price filters are applied, products with sale prices outside the selected range are displayed if their original price falls within the range</td>
+                    </tr>
+                    <tr>
+                        <th>Type</th>
+                        <td>Functional Bug / Filter Logic Issue</td>
+                    </tr>
+                    <tr>
+                        <th>Reported By</th>
+                        <td>QA Engineer</td>
+                    </tr>
+                    <tr>
+                        <th>Date Reported</th>
+                        <td>December 1, 2025</td>
+                    </tr>
+                    <tr>
+                        <th>Status</th>
+                        <td>Open</td>
+                    </tr>
+                    <tr>
+                        <th>Severity</th>
+                        <td><span class="badge badge-medium">Medium</span> - Affects search accuracy and user trust in filters</td>
+                    </tr>
+                    <tr>
+                        <th>Priority</th>
+                        <td><span class="badge badge-medium">Medium</span> - Impacts user experience when using price filters</td>
+                    </tr>
+                    <tr>
+                        <th>Related Test Case</th>
+                        <td><a href="test-cases.html#TC-012">TC-012: Handle Price Ranges</a> (Manual Test)</td>
+                    </tr>
+                    <tr>
+                        <th>Environment</th>
+                        <td>
+                            <strong>OS:</strong> Windows 10<br>
+                            <strong>Browser:</strong> Chrome<br>
+                            <strong>URL:</strong> https://www.amazon.com/s?k=phone+case<br>
+                            <strong>Date:</strong> December 1, 2025
+                        </td>
+                    </tr>
+                </table>
+
+                <h3>Description</h3>
+                <p>When users apply a price range filter (e.g., $28 - $44) to search results, Amazon displays products whose <strong>current sale price</strong> falls outside the selected range, as long as the <strong>original/typical price</strong> is within the range.</p>
+                
+                <p>This creates inconsistency and confusion, as users expect to see products whose <strong>displayed price</strong> matches their filter criteria, not products with discounts that place them outside the range.</p>
+
+                <h3>Steps to Reproduce</h3>
+                <ol>
+                    <li>Navigate to Amazon.com</li>
+                    <li>Search for "phone case"</li>
+                    <li>Wait for search results to load</li>
+                    <li>In the left sidebar under "Price", set a range of $28 - $44</li>
+                    <li>Click "Go" to apply the filter</li>
+                    <li>Observe the displayed products and their prices</li>
+                </ol>
+
+                <h3>Expected Result</h3>
+                <p>All products displayed should have their <strong>current displayed price</strong> (including any discounts/sales) within the $28 - $44 range.</p>
+                
+                <p><strong>Example:</strong> If filtered for $28-$44:</p>
+                <ul>
+                    <li>✅ Product with price $29.99 - SHOULD appear</li>
+                    <li>✅ Product with price $35.00 - SHOULD appear</li>
+                    <li>❌ Product with sale price $25.40 (even if original was $29.99) - SHOULD NOT appear</li>
+                    <li>❌ Product with price $50.00 - SHOULD NOT appear</li>
+                </ul>
+
+                <h3>Actual Result</h3>
+                <p>Products with sale prices <strong>below</strong> the minimum filter threshold are displayed if their original price falls within the range.</p>
+                
+                <p><strong>Specific Example Found:</strong></p>
+                <ul>
+                    <li><strong>Product:</strong> "for iPhone 16 Plus Case with 360° Rotatable Magnetic Ring Stand"</li>
+                    <li><strong>Filter Applied:</strong> $28 - $44</li>
+                    <li><strong>Current Price:</strong> $25.40 (with discount) ❌ <em>Below minimum of $28</em></li>
+                    <li><strong>Original Price:</strong> $29.99 ✓ <em>Within range</em></li>
+                    <li><strong>Result:</strong> Product is displayed despite current price being outside the filter range</li>
+                </ul>
+
+                <h3>Impact</h3>
+                <ul>
+                    <li><strong>User Confusion:</strong> Users expect filtered results to match displayed prices, not original prices</li>
+                    <li><strong>Filter Ineffectiveness:</strong> Price filters don't accurately narrow down results</li>
+                    <li><strong>Trust Issues:</strong> Users may lose confidence in Amazon's filtering functionality</li>
+                    <li><strong>Purchasing Decisions:</strong> Users might overlook better deals thinking they're outside their budget</li>
+                    <li><strong>Inconsistent Logic:</strong> Unclear whether filtering is by current price or original price</li>
+                </ul>
+
+                <h3>Evidence</h3>
+                <div style="margin: 20px 0;">
+                    <p><strong>Screenshot: Product with $25.40 sale price appearing in $28-$44 filter results</strong></p>
+                    <img src="../screenshots/bug_4_screenshot1.png" alt="Price filter showing product outside range" style="max-width: 100%; height: auto; border: 1px solid #ccc; margin-bottom: 20px;">
+                    <p><em>Product shows $25.40 (below $28 minimum) but appears because "Typical price: $29.99" is within $28-$44 range</em></p>
+                </div>
+
+                <h3>Root Cause Analysis</h3>
+                <p>Possible explanations:</p>
+                <ul>
+                    <li><strong>Filter Logic:</strong> Price filter may be checking against original/list price rather than current displayed price</li>
+                    <li><strong>Business Decision:</strong> Amazon may intentionally show discounted items to increase sales, even if outside user's filter</li>
+                    <li><strong>Database Query:</strong> Backend query may filter by base price before applying discounts in the UI</li>
+                    <li><strong>Inconsistent Handling:</strong> Sale prices may not be factored into filter logic</li>
+                </ul>
+
+                <h3>Suggested Fix</h3>
+                <p><strong>Option 1 (Recommended):</strong> Filter by <strong>displayed/current price</strong> including all discounts and sales. This matches user expectations - if a user filters for $28-$44, they want to see products that cost $28-$44 <em>right now</em>.</p>
+                
+                <p><strong>Option 2:</strong> If filtering by original price is intentional, add clear indication: "Filtering by original price. Some items may show discounted prices." OR provide two filter options: "Current Price" and "Original Price".</p>
+                
+                <p><strong>Option 3:</strong> When a product's sale price falls outside the range, mark it clearly: "Outside your price range but on sale" with visual distinction.</p>
+
+                <h3>Additional Notes</h3>
+                <p>This is classified as a <strong>Medium Severity</strong> functional bug because:</p>
+                <ul>
+                    <li>It directly affects search filtering functionality</li>
+                    <li>It creates inconsistent user experience</li>
+                    <li>It's not immediately obvious to users why certain products appear</li>
+                    <li>It may cause users to miss better deals or make suboptimal purchasing decisions</li>
+                </ul>
+                
+                <p><strong>Further Testing Needed:</strong></p>
+                <ul>
+                    <li>Test if products with sale prices <em>above</em> the maximum filter also appear (e.g., $50 sale price with $40 original in $28-$44 range)</li>
+                    <li>Test behavior with "Up to $X" and other price filter options</li>
+                    <li>Test across different product categories</li>
+                    <li>Check if this behavior is documented anywhere in Amazon's UI</li>
+                </ul>
+            </div>
+
             <h2>Defect Summary</h2>
             
             <div class="card">
-                <p>During testing of Amazon's product search functionality, <strong>2 defects</strong> were discovered and documented below.</p>
+                <p>During testing of Amazon's product search functionality, <strong>4 defects</strong> were discovered and documented below.</p>
                 
                 <h3>Bug Statistics</h3>
                 <table>
@@ -315,17 +602,17 @@
                         </tr>
                         <tr>
                             <td><span class="badge badge-medium">Medium</span></td>
-                            <td>2</td>
-                            <td>Open (2)</td>
+                            <td>3</td>
+                            <td>Open (3)</td>
                         </tr>
                         <tr>
                             <td><span class="badge badge-low">Low</span></td>
-                            <td>0</td>
-                            <td>-</td>
+                            <td>1</td>
+                            <td>Open (1)</td>
                         </tr>
                         <tr style="font-weight: 600;">
                             <td>TOTAL</td>
-                            <td>1</td>
+                            <td>4</td>
                             <td>1 Open</td>
                         </tr>
                     </tbody>

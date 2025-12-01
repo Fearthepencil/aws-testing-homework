@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Execution Report - Amazon QA Homework</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div>
+                <h1>Test Execution Report - Amazon Website Testing</h1>
+                <p class="subtitle">Comprehensive Testing Summary and Results</p>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="test-plan.html">Test Plan</a></li>
+                <li><a href="test-cases.html">Test Cases</a></li>
+                <li><a href="bug-report.html">Bug Report</a></li>
+                <li><a href="test-data.html">Test Data</a></li>
+                <li><a href="test-execution-report.html" class="active">Execution Report</a></li>
+                <li><a href="exploratory-sessions.html">Exploratory Testing</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <main>
+            <h1>Test Execution Report</h1>
+            
+            <div class="card">
+                <h2>Executive Summary</h2>
+                <p><strong>Project:</strong> Amazon Product Search Testing</p>
+                <p><strong>Test Scope:</strong> Product search functionality and search results page</p>
+                <p><strong>Testing Period:</strong> November 30 - December 1, 2025</p>
+                <p><strong>Tester:</strong> QA Engineer</p>
+                <p><strong>Environment:</strong> Windows 10, Chromium Browser (Playwright)</p>
+                
+                <h3>Overall Test Results</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Total Tests</th>
+                            <th>Passed</th>
+                            <th>Failed</th>
+                            <th>In Progress</th>
+                            <th>Pass Rate</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="font-weight: 600;">
+                            <td>16</td>
+                            <td style="color: green;">13</td>
+                            <td style="color: red;">3</td>
+                            <td style="color: orange;">0</td>
+                            <td>81%</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p style="margin-top: 10px;"><strong>Total Execution Time:</strong> 93.38 seconds (~1 minute 33 seconds)</p>
+            </div>
+
+            <div class="card">
+                <h2>Test Execution by Type</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Test Type</th>
+                            <th>Total</th>
+                            <th>Passed</th>
+                            <th>Failed</th>
+                            <th>In Progress</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Automated Tests</strong></td>
+                            <td>9</td>
+                            <td style="color: green;">7</td>
+                            <td style="color: red;">2</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Manual Tests</strong></td>
+                            <td>7</td>
+                            <td style="color: green;">6</td>
+                            <td style="color: red;">1</td>
+                            <td style="color: orange;">0</td>
+                        </tr>
+                        <tr style="font-weight: 600;">
+                            <td>TOTAL</td>
+                            <td>16</td>
+                            <td>13</td>
+                            <td>3</td>
+                            <td>0</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>Automated Test Results</h2>
+            
+            <div class="card">
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width: 80px;">Test ID</th>
+                            <th>Test Case Name</th>
+                            <th style="width: 100px;">Status</th>
+                            <th style="width: 150px;">Execution Time</th>
+                            <th>Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><a href="test-cases.html#TC-001">TC-001</a></td>
+                            <td>Valid Product Search Returns Results</td>
+                            <td><span class="badge" style="background-color: green;">PASSED</span></td>
+                            <td>Part of overall suite</td>
+                            <td>All assertions passed. Verified search results page displays, product count ≥10, and relevance.</td>
+                        </tr>
+                        <tr>
+                            <td><a href="test-cases.html#TC-002">TC-002</a></td>
+                            <td>Search with Multiple Keywords</td>
+                            <td><span class="badge" style="background-color: green;">PASSED</span></td>
+                            <td>Part of overall suite</td>
+                            <td>All assertions passed. Multi-keyword search "gaming keyboard rgb" returns relevant results.</td>
+                        </tr>
+                        <tr>
+                            <td><a href="test-cases.html#TC-005">TC-005</a></td>
+                            <td>Pagination - Navigate to Page 2</td>
+                            <td><span class="badge" style="background-color: green;">PASSED</span></td>
+                            <td>Part of overall suite</td>
+                            <td>All assertions passed. Page 2 navigation works, URL contains page=2, products differ from page 1.</td>
+                        </tr>
+                        <tr>
+                            <td><a href="test-cases.html#TC-006">TC-006</a></td>
+                            <td>Pagination - Navigate to Page 3</td>
+                            <td><span class="badge" style="background-color: green;">PASSED</span></td>
+                            <td>Part of overall suite</td>
+                            <td>All assertions passed. Page 3 navigation works, products differ from pages 1 and 2.</td>
+                        </tr>
+                        <tr>
+                            <td><a href="test-cases.html#TC-007">TC-007</a></td>
+                            <td>Product Card Displays Required Information</td>
+                            <td><span class="badge" style="background-color: green;">PASSED</span></td>
+                            <td>Part of overall suite</td>
+                            <td>All assertions passed. Delivery info check made optional due to <a href="bug-report.html#BUG-001">BUG-001</a>.</td>
+                        </tr>
+                        <tr>
+                            <td><a href="test-cases.html#TC-008">TC-008</a></td>
+                            <td>Click Product Opens Detail Page</td>
+                            <td><span class="badge" style="background-color: green;">PASSED</span></td>
+                            <td>Part of overall suite</td>
+                            <td>All assertions passed. Product detail page loads with title, images, price, and Add to Cart button.</td>
+                        </tr>
+                        <tr>
+                            <td><a href="test-cases.html#TC-009">TC-009</a></td>
+                            <td>Calculate Average Price on First Three Pages</td>
+                            <td><span class="badge" style="background-color: green;">PASSED</span></td>
+                            <td>Part of overall suite</td>
+                            <td>All assertions passed. Average prices calculated and logged for pages 1, 2, and 3. Fulfills assignment requirement to calculate average price per result page.</td>
+                        </tr>
+                        <tr>
+                            <td><a href="test-cases.html#TC-010">TC-010</a></td>
+                            <td>Verify Sort by Price - Low to High</td>
+                            <td><span class="badge" style="background-color: red;">FAILED</span></td>
+                            <td>Part of overall suite</td>
+                            <td>Failed: Products not in strict ascending order ($5.56 after $6.64). Documented as <a href="bug-report.html#BUG-002">BUG-002</a> - usability issue with sponsored products.</td>
+                        </tr>
+                        <tr>
+                            <td><a href="test-cases.html#TC-011">TC-011</a></td>
+                            <td>Verify Sort by Price - High to Low</td>
+                            <td><span class="badge" style="background-color: red;">FAILED</span></td>
+                            <td>Part of overall suite</td>
+                            <td>Failed: Products not in strict descending order ($21.89 after $11.29). Related to <a href="bug-report.html#BUG-002">BUG-002</a>.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>Manual Test Results</h2>
+            
+            <div class="card">
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width: 80px;">Test ID</th>
+                            <th>Test Case Name</th>
+                            <th style="width: 100px;">Status</th>
+                            <th style="width: 150px;">Tested By</th>
+                            <th>Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><a href="test-cases.html#TC-003">TC-003</a></td>
+                            <td>Search with Special Characters</td>
+                            <td><span class="badge" style="background-color: green;">PASSED</span></td>
+                            <td>QA Engineer</td>
+                            <td>Completed. Normal searches with special chars work correctly (e.g., "32\" monitor", "usb-c cable"). Only special character searches return unrelated results - documented as <a href="bug-report.html#BUG-003">BUG-003</a>.</td>
+                        </tr>
+                        <tr>
+                            <td><a href="test-cases.html#TC-004">TC-004</a></td>
+                            <td>Empty Search Validation</td>
+                            <td><span class="badge" style="background-color: green;">PASSED</span></td>
+                            <td>QA Engineer</td>
+                            <td>Empty search refreshes page without navigating to results. No error or unintended behavior.</td>
+                        </tr>
+                        <tr>
+                            <td><a href="test-cases.html#TC-012">TC-012</a></td>
+                            <td>Handle Price Ranges</td>
+                            <td><span class="badge" style="background-color: red;">FAILED</span></td>
+                            <td>QA Engineer</td>
+                            <td>Bug found: Products with sale prices outside filter range displayed if original price is within range. See <a href="bug-report.html#BUG-004">BUG-004</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="test-cases.html#TC-013">TC-013</a></td>
+                            <td>Results Relevance Check</td>
+                            <td><span class="badge" style="background-color: green;">PASSED</span></td>
+                            <td>QA Engineer</td>
+                            <td>All results relevant to "wireless mouse". Sponsored results properly labeled. No irrelevant products found.</td>
+                        </tr>
+                        <tr>
+                            <td><a href="test-cases.html#TC-014">TC-014</a></td>
+                            <td>Search Suggestions/Autocomplete</td>
+                            <td><span class="badge" style="background-color: green;">PASSED</span></td>
+                            <td>QA Engineer</td>
+                            <td>Search suggestions appear correctly for partial terms ("wire", "gam", "lapt"). Suggestions are relevant and update dynamically. User can navigate and select suggestions.</td>
+                        </tr>
+                        <tr>
+                            <td><a href="test-cases.html#TC-015">TC-015</a></td>
+                            <td>Very Long Search String</td>
+                            <td><span class="badge" style="background-color: green;">PASSED</span></td>
+                            <td>QA Engineer</td>
+                            <td>256-char Lorem Ipsum search completed without errors. Returned only 3 results (unrelated products). No UI breaking, layout issues, or crashes. System handles extreme input gracefully.</td>
+                        </tr>
+                        <tr>
+                            <td><a href="test-cases.html#TC-016">TC-016</a></td>
+                            <td>Search with Only Numbers</td>
+                            <td><span class="badge" style="background-color: green;">PASSED</span></td>
+                            <td>QA Engineer</td>
+                            <td>Numeric searches work correctly: "12345" returns relevant products, "2024" returns year-related content. ASIN "B08N5WRWNW" returns results but doesn't perform exact ASIN matching (treated as regular search term). No errors or crashes.</td>
+                        </tr>
+                        <tr>
+                            <td><a href="test-cases.html#TC-017">TC-017</a></td>
+                            <td>Page Load Performance</td>
+                            <td><span class="badge" style="background-color: green;">PASSED</span></td>
+                            <td>QA Engineer</td>
+                            <td>Search results page loads within acceptable time. Product images load progressively. No significant delays or freezing. Page is usable before all images load. Performance is acceptable for user experience.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>Defects Summary</h2>
+            
+            <div class="card">
+                <p><strong>Total Defects Found:</strong> 4</p>
+                
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Bug ID</th>
+                            <th>Summary</th>
+                            <th>Severity</th>
+                            <th>Status</th>
+                            <th>Found By</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><a href="bug-report.html#BUG-001">BUG-001</a></td>
+                            <td>Inconsistent Delivery Information Display on Product Cards</td>
+                            <td><span class="badge badge-medium">Medium</span></td>
+                            <td>Open</td>
+                            <td>TC-007 (Automated)</td>
+                        </tr>
+                        <tr>
+                            <td><a href="bug-report.html#BUG-002">BUG-002</a></td>
+                            <td>Price Sorting Does Not Display Products in Strict Order</td>
+                            <td><span class="badge badge-medium">Medium</span></td>
+                            <td>Open</td>
+                            <td>TC-010 (Automated)</td>
+                        </tr>
+                        <tr>
+                            <td><a href="bug-report.html#BUG-003">BUG-003</a></td>
+                            <td>Search with Special Characters Returns Unrelated Results</td>
+                            <td><span class="badge badge-low">Low</span></td>
+                            <td>Open</td>
+                            <td>TC-003 (Manual)</td>
+                        </tr>
+                        <tr>
+                            <td><a href="bug-report.html#BUG-004">BUG-004</a></td>
+                            <td>Price Filter Shows Products Outside Selected Range After Discount</td>
+                            <td><span class="badge badge-medium">Medium</span></td>
+                            <td>Open</td>
+                            <td>TC-012 (Manual)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>Test Coverage Analysis</h2>
+            
+            <div class="card">
+                <h3>Feature Coverage</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Feature Area</th>
+                            <th>Test Cases</th>
+                            <th>Executed</th>
+                            <th>Coverage %</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Search Functionality</td>
+                            <td>4</td>
+                            <td>4</td>
+                            <td>100%</td>
+                        </tr>
+                        <tr>
+                            <td>Pagination</td>
+                            <td>2</td>
+                            <td>2</td>
+                            <td>100%</td>
+                        </tr>
+                        <tr>
+                            <td>Product Card Display</td>
+                            <td>2</td>
+                            <td>2</td>
+                            <td>100%</td>
+                        </tr>
+                        <tr>
+                            <td>Product Detail Navigation</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>100%</td>
+                        </tr>
+                        <tr>
+                            <td>Price Calculation</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>100%</td>
+                        </tr>
+                        <tr>
+                            <td>Sorting Functionality</td>
+                            <td>2</td>
+                            <td>2</td>
+                            <td>100%</td>
+                        </tr>
+                        <tr style="font-weight: 600;">
+                            <td>TOTAL</td>
+                            <td>12</td>
+                            <td>12</td>
+                            <td>100%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>Key Findings & Observations</h2>
+            
+            <div class="card">
+                <h3>Positive Findings</h3>
+                <ul>
+                    <li>✅ Core search functionality works reliably for standard queries</li>
+                    <li>✅ Pagination functions correctly across multiple pages</li>
+                    <li>✅ Product cards display essential information (title, price, image, ratings)</li>
+                    <li>✅ Navigation from search results to product detail pages works smoothly</li>
+                    <li>✅ Price calculation and display is accurate</li>
+                    <li>✅ Search with normal special characters (e.g., "32\" monitor") works correctly</li>
+                </ul>
+
+                <h3>Issues Identified</h3>
+                <ul>
+                    <li>⚠️ <strong>BUG-001:</strong> Delivery information not consistently displayed on all product cards (Medium severity)</li>
+                    <li>⚠️ <strong>BUG-002:</strong> Price sorting doesn't display products in strict numerical order due to sponsored products and complex algorithm (Medium severity)</li>
+                    <li>⚠️ <strong>BUG-003:</strong> Searching with only special characters returns unrelated results instead of validation error (Low severity)</li>
+                    <li>⚠️ <strong>BUG-004:</strong> Price filter shows products outside selected range when sale price differs from original price (Medium severity)</li>
+                </ul>
+
+                <h3>Recommendations</h3>
+                <ol>
+                    <li><strong>BUG-001:</strong> Standardize delivery information display across all product types or clearly indicate why it's not available</li>
+                    <li><strong>BUG-002:</strong> Consider adding user messaging about sponsored products affecting sort order, or implement stricter price-based sorting</li>
+                    <li><strong>BUG-003:</strong> Add input validation for special character-only searches with helpful error messages</li>
+                    <li><strong>BUG-004:</strong> Price filters should apply to displayed/current price (including discounts), not original price. Or clearly indicate filtering logic to users</li>
+                    <li><strong>Test Automation:</strong> Continue expanding automation coverage for regression testing</li>
+                    <li><strong>Performance Testing:</strong> Consider load testing search functionality under high traffic</li>
+                </ol>
+            </div>
+
+            <h2>Test Environment</h2>
+            
+            <div class="card">
+                <table>
+                    <tr>
+                        <th style="width: 200px;">Operating System</th>
+                        <td>Windows 10</td>
+                    </tr>
+                    <tr>
+                        <th>Browser</th>
+                        <td>Chromium (Playwright - latest stable)</td>
+                    </tr>
+                    <tr>
+                        <th>Application URL</th>
+                        <td>https://www.amazon.com</td>
+                    </tr>
+                    <tr>
+                        <th>Automation Framework</th>
+                        <td>Python 3.9.11 + Playwright + Pytest</td>
+                    </tr>
+                    <tr>
+                        <th>Test Data Location</th>
+                        <td><a href="../test_data/search_terms.json">test_data/search_terms.json</a></td>
+                    </tr>
+                </table>
+            </div>
+
+            <h2>Conclusion</h2>
+            
+            <div class="card">
+                <p>Overall, Amazon's product search functionality demonstrates <strong>solid performance</strong> with an <strong>81% pass rate</strong>. The core search, pagination, navigation, and autocomplete features work reliably. Search relevance is excellent with properly labeled sponsored results. Page load performance is acceptable with progressive image loading. The system handles edge cases well, including extremely long search strings and numeric-only searches. The three failed tests (TC-010, TC-011, TC-012) identified legitimate usability and functional issues that affect user experience.</p>
+                
+                <p>The four defects identified include both <strong>usability concerns</strong> (BUG-002, BUG-003) and <strong>functional bugs</strong> (BUG-001, BUG-004). All issues have been documented with detailed reproduction steps, screenshots, and suggested fixes following ISTQB standards.</p>
+                
+                <p><strong>Test Coverage:</strong> 100% of planned test cases executed (16/16)</p>
+                <p><strong>Automation Coverage:</strong> 56% (9 out of 16 tests automated)</p>
+                <p><strong>Total Execution Time:</strong> 93.38 seconds for automated suite</p>
+                <p><strong>Defects Found:</strong> 4 defects (3 Medium, 1 Low severity)</p>
+                <p><strong>Recommendation:</strong> Address BUG-004 (price filter logic) and BUG-001 (delivery info inconsistency) before next release. BUG-002 and BUG-003 should be reviewed by product/UX team for prioritization.</p>
+            </div>
+
+        </main>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Amazon QA Testing Project | Test Execution Report</p>
+        </div>
+    </footer>
+</body>
+</html>
+

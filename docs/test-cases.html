@@ -49,7 +49,7 @@
                     <tbody>
                         <tr>
                             <td>Core Functional</td>
-                            <td>6</td>
+                            <td>5</td>
                             <td>2</td>
                             <td>8</td>
                         </tr>
@@ -67,9 +67,9 @@
                         </tr>
                         <tr style="font-weight: 600;">
                             <td>TOTAL</td>
-                            <td>10</td>
+                            <td>9</td>
                             <td>8</td>
-                            <td>18</td>
+                            <td>17</td>
                         </tr>
                     </tbody>
                 </table>
@@ -79,8 +79,8 @@
             <div class="card">
                 <ul>
                     <li><a href="#core-functional">Core Functional Tests (TC-001 to TC-008)</a></li>
-                    <li><a href="#price-calculation">Price Calculation & Sorting Tests (TC-009 to TC-013)</a></li>
-                    <li><a href="#quality-usability">Quality & Usability Tests (TC-014 to TC-021)</a></li>
+                    <li><a href="#price-calculation">Price Calculation & Sorting Tests (TC-009 to TC-012)</a></li>
+                    <li><a href="#quality-usability">Quality & Usability Tests (TC-014 to TC-017)</a></li>
                 </ul>
             </div>
 
@@ -547,7 +547,7 @@
             <!-- TC-009 -->
             <div class="test-case">
                 <div class="test-case-header">
-                    <span class="test-case-id">TC-009: Calculate Average Price on Page 1</span>
+                    <span class="test-case-id">TC-009: Calculate Average Price on First Three Pages</span>
                     <div>
                         <span class="badge badge-automated">Automated</span>
                         <span class="badge badge-high">High Priority</span>
@@ -556,12 +556,12 @@
 
                 <div class="test-case-section">
                     <h4>Test Objective</h4>
-                    <p>Extract all product prices from page 1 and calculate the average price.</p>
+                    <p>Extract all product prices from the first three result pages and calculate the average price for each page.</p>
                 </div>
 
                 <div class="test-case-section">
                     <h4>Preconditions</h4>
-                    <p>User has performed a search with results</p>
+                    <p>User has performed a search with multiple pages of results</p>
                 </div>
 
                 <div class="test-case-section">
@@ -576,18 +576,20 @@
 
                 <div class="test-case-section">
                     <h4>When</h4>
-                    <p>System extracts all visible product prices from the page</p>
+                    <p>System extracts all visible product prices from pages 1, 2, and 3</p>
                 </div>
 
                 <div class="test-case-section">
                     <h4>Then</h4>
                     <p>
-                        • All prices are extracted successfully<br>
-                        • Average price is calculated correctly<br>
-                        • Result is logged to console in format:<br>
+                        • All prices are extracted successfully from each page<br>
+                        • Average price is calculated correctly for each page<br>
+                        • Results are logged to console in format:<br>
                         &nbsp;&nbsp;"PAGE 1 - Products: X, Average: $Y.ZZ"<br>
-                        • Average is greater than $0.00
-                        • Average is less than $200.00
+                        &nbsp;&nbsp;"PAGE 2 - Products: X, Average: $Y.ZZ"<br>
+                        &nbsp;&nbsp;"PAGE 3 - Products: X, Average: $Y.ZZ"<br>
+                        • Each average is greater than $0.00<br>
+                        • Page 1 average is less than $200.00
                     </p>
                 </div>
 
@@ -603,7 +605,7 @@
 
                 <div class="test-case-section">
                     <h4>Note</h4>
-                    <p>This test fulfills the homework requirement to calculate average prices.</p>
+                    <p>This test fulfills the homework requirement to calculate average prices per result page for the first three result pages.</p>
                 </div>
             </div>
 
@@ -722,63 +724,7 @@
             <!-- TC-012 -->
             <div class="test-case">
                 <div class="test-case-header">
-                    <span class="test-case-id">TC-012: Handle Products Without Prices</span>
-                    <div>
-                        <span class="badge badge-automated">Automated</span>
-                        <span class="badge badge-medium">Medium Priority</span>
-                    </div>
-                </div>
-
-                <div class="test-case-section">
-                    <h4>Test Objective</h4>
-                    <p>Verify that price calculation handles products without displayed prices correctly.</p>
-                </div>
-
-                <div class="test-case-section">
-                    <h4>Preconditions</h4>
-                    <p>Search results contain products without prices (e.g., "Currently unavailable")</p>
-                </div>
-
-                <div class="test-case-section">
-                    <h4>Test Data</h4>
-                    <p>Search term: "wireless mouse"</p>
-                </div>
-
-                <div class="test-case-section">
-                    <h4>Given</h4>
-                    <p>Search results page contains some products without prices</p>
-                </div>
-
-                <div class="test-case-section">
-                    <h4>When</h4>
-                    <p>System attempts to extract prices from all products</p>
-                </div>
-
-                <div class="test-case-section">
-                    <h4>Then</h4>
-                    <p>
-                        • Products without prices are skipped gracefully<br>
-                        • No errors or exceptions are thrown<br>
-                        • Average is calculated only from products with prices<br>
-                        • Log indicates number of products with prices vs. total
-                    </p>
-                </div>
-
-                <div class="test-case-section">
-                    <h4>Test Technique</h4>
-                    <p>Error Guessing, Exception Handling Testing</p>
-                </div>
-
-                <div class="test-case-section">
-                    <h4>Risk Coverage</h4>
-                    <p>PR-03: Price extraction errors (HIGH risk)</p>
-                </div>
-            </div>
-
-            <!-- TC-013 -->
-            <div class="test-case">
-                <div class="test-case-header">
-                    <span class="test-case-id">TC-013: Handle Price Ranges</span>
+                    <span class="test-case-id">TC-012: Handle Price Ranges</span>
                     <div>
                         <span class="badge badge-manual">Manual</span>
                         <span class="badge badge-medium">Medium Priority</span>
@@ -834,10 +780,10 @@
             <!-- QUALITY & USABILITY TESTS -->
             <h2 id="quality-usability">Quality & Usability Tests</h2>
 
-            <!-- TC-014 -->
+            <!-- TC-013 -->
             <div class="test-case">
                 <div class="test-case-header">
-                    <span class="test-case-id">TC-014: Results Relevance Check</span>
+                    <span class="test-case-id">TC-013: Results Relevance Check</span>
                     <div>
                         <span class="badge badge-manual">Manual</span>
                         <span class="badge badge-high">High Priority</span>
@@ -891,10 +837,10 @@
                 </div>
             </div>
 
-            <!-- TC-018 -->
+            <!-- TC-014 -->
             <div class="test-case">
                 <div class="test-case-header">
-                    <span class="test-case-id">TC-018: Search Suggestions/Autocomplete</span>
+                    <span class="test-case-id">TC-014: Search Suggestions/Autocomplete</span>
                     <div>
                         <span class="badge badge-manual">Manual</span>
                         <span class="badge badge-medium">Medium Priority</span>
@@ -948,10 +894,10 @@
                 </div>
             </div>
 
-            <!-- TC-019 -->
+            <!-- TC-015 -->
             <div class="test-case">
                 <div class="test-case-header">
-                    <span class="test-case-id">TC-019: Very Long Search String</span>
+                    <span class="test-case-id">TC-015: Very Long Search String</span>
                     <div>
                         <span class="badge badge-manual">Manual</span>
                         <span class="badge badge-low">Low Priority</span>
@@ -1005,10 +951,10 @@
                 </div>
             </div>
 
-            <!-- TC-020 -->
+            <!-- TC-016 -->
             <div class="test-case">
                 <div class="test-case-header">
-                    <span class="test-case-id">TC-020: Search with Only Numbers</span>
+                    <span class="test-case-id">TC-016: Search with Only Numbers</span>
                     <div>
                         <span class="badge badge-manual">Manual</span>
                         <span class="badge badge-medium">Medium Priority</span>
@@ -1062,10 +1008,10 @@
                 </div>
             </div>
 
-            <!-- TC-021 -->
+            <!-- TC-017 -->
             <div class="test-case">
                 <div class="test-case-header">
-                    <span class="test-case-id">TC-021: Page Load Performance</span>
+                    <span class="test-case-id">TC-017: Page Load Performance</span>
                     <div>
                         <span class="badge badge-manual">Manual</span>
                         <span class="badge badge-low">Low Priority</span>
@@ -1218,47 +1164,40 @@
                         <tr>
                             <td>TC-012</td>
                             <td>PR-03</td>
-                            <td>Error Guessing</td>
-                            <td>Automated</td>
-                            <td>Medium</td>
-                        </tr>
-                        <tr>
-                            <td>TC-013</td>
-                            <td>PR-03</td>
                             <td>Decision Table</td>
                             <td>Manual</td>
                             <td>Medium</td>
                         </tr>
                         <tr>
-                            <td>TC-014</td>
+                            <td>TC-013</td>
                             <td>PR-06</td>
                             <td>Exploratory</td>
                             <td>Manual</td>
                             <td>High</td>
                         </tr>
                         <tr>
-                            <td>TC-018</td>
+                            <td>TC-014</td>
                             <td>Usability</td>
                             <td>Exploratory</td>
                             <td>Manual</td>
                             <td>Medium</td>
                         </tr>
                         <tr>
-                            <td>TC-019</td>
+                            <td>TC-015</td>
                             <td>PR-05</td>
                             <td>Boundary Value Analysis</td>
                             <td>Manual</td>
                             <td>Low</td>
                         </tr>
                         <tr>
-                            <td>TC-020</td>
+                            <td>TC-016</td>
                             <td>PR-05</td>
                             <td>Equivalence Partitioning</td>
                             <td>Manual</td>
                             <td>Medium</td>
                         </tr>
                         <tr>
-                            <td>TC-021</td>
+                            <td>TC-017</td>
                             <td>Usability</td>
                             <td>Performance Observation</td>
                             <td>Manual</td>
