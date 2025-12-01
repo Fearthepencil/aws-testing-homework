@@ -1,7 +1,7 @@
 from pages.search_results_page import SearchResultsPage
 from pages.home_page import HomePage
 
-
+# TC-007: Product cards display correctly
 def test_product_cards(page, search_terms):
     search_term = search_terms["default_search_term"]
     home_page = HomePage(page)
