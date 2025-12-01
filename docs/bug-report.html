@@ -155,10 +155,143 @@
                 <p>This appears to be more prevalent with products that have "No featured offers available" or multiple third-party sellers. Products sold and shipped by Amazon typically display delivery information consistently. The inconsistency may be intentional design for marketplace items, but from a UX perspective, it creates an inconsistent experience.</p>
             </div>
 
+            <!-- BUG-002 -->
+            <div class="bug">
+                <div class="bug-header">
+                    <span class="bug-id">BUG-002: Price Sorting Does Not Display Products in Strict Ascending Order</span>
+                    <div>
+                        <span class="badge badge-medium">Medium Severity</span>
+                        <span class="badge badge-medium">Medium Priority</span>
+                    </div>
+                </div>
+
+                <table style="margin-top: 15px;">
+                    <tr>
+                        <th style="width: 200px;">Bug ID</th>
+                        <td>BUG-002</td>
+                    </tr>
+                    <tr>
+                        <th>Summary</th>
+                        <td>When sorting by "Price: Low to High", products are not displayed in strict ascending price order based on displayed price</td>
+                    </tr>
+                    <tr>
+                        <th>Type</th>
+                        <td>Usability Issue / UX Inconsistency</td>
+                    </tr>
+                    <tr>
+                        <th>Reported By</th>
+                        <td>QA Engineer</td>
+                    </tr>
+                    <tr>
+                        <th>Date Reported</th>
+                        <td>December 1, 2025</td>
+                    </tr>
+                    <tr>
+                        <th>Status</th>
+                        <td>Open</td>
+                    </tr>
+                    <tr>
+                        <th>Severity</th>
+                        <td><span class="badge badge-medium">Medium</span> - Affects user experience and trust in search functionality</td>
+                    </tr>
+                    <tr>
+                        <th>Priority</th>
+                        <td><span class="badge badge-medium">Medium</span> - Should be reviewed by product/UX team</td>
+                    </tr>
+                    <tr>
+                        <th>Related Test Case</th>
+                        <td><a href="test-cases.html#TC-010">TC-010: Verify Sort by Price - Low to High</a></td>
+                    </tr>
+                    <tr>
+                        <th>Environment</th>
+                        <td>
+                            <strong>OS:</strong> Windows 10<br>
+                            <strong>Browser:</strong> Chromium (Playwright)<br>
+                            <strong>URL:</strong> https://www.amazon.com/s?k=wireless+mouse&s=price-asc-rank<br>
+                            <strong>Date:</strong> December 1, 2025
+                        </td>
+                    </tr>
+                </table>
+
+                <h3>Description</h3>
+                <p>When users select "Price: Low to High" from the sort dropdown on search results, they expect products to be displayed in strict ascending order based on the displayed price. However, the actual results show products out of order, with higher-priced items appearing before lower-priced items.</p>
+                
+                <p>This creates confusion and frustration for users who are trying to find the lowest-priced products, as they must manually scan through results rather than trusting the sort order.</p>
+
+                <h3>Steps to Reproduce</h3>
+                <ol>
+                    <li>Navigate to Amazon.com</li>
+                    <li>Search for "wireless mouse"</li>
+                    <li>Wait for search results to load</li>
+                    <li>Click on the "Sort by" dropdown</li>
+                    <li>Select "Price: Low to High"</li>
+                    <li>Wait for page to reload with sorted results</li>
+                    <li>Observe the displayed prices of the first 10-15 products</li>
+                </ol>
+
+                <h3>Expected Result</h3>
+                <p>Products should be displayed in strict ascending order based on the displayed price. For example:</p>
+                <ul>
+                    <li>Product 1: $3.85</li>
+                    <li>Product 2: $4.69</li>
+                    <li>Product 3: $4.99</li>
+                    <li>Product 4: $6.65</li>
+                    <li>Product 5: $7.19</li>
+                    <li>etc.</li>
+                </ul>
+                <p>Each subsequent product should have a price greater than or equal to the previous product.</p>
+
+                <h3>Actual Result</h3>
+                <p>Products are displayed out of order. Example from actual test execution:</p>
+                <ul>
+                    <li>Product 1: $6.65</li>
+                    <li>Product 2: $7.19</li>
+                    <li>Product 3: $4.69</li>
+                    <li>Product 4: $4.99</li>
+                </ul>
+                <p>Higher-priced items ($6.65, $7.19) appear before lower-priced items ($4.69, $4.99), violating the expected sort order.</p>
+
+                <h3>Impact</h3>
+                <ul>
+                    <li><strong>User Experience:</strong> Users cannot trust the sort functionality and must manually scan all results</li>
+                    <li><strong>User Trust:</strong> Reduces confidence in Amazon's search and filtering capabilities</li>
+                    <li><strong>Efficiency:</strong> Users waste time looking through unsorted results</li>
+                    <li><strong>Accessibility:</strong> Users relying on screen readers or assistive technology may miss lower-priced items</li>
+                    <li><strong>Business Impact:</strong> Users may abandon search and go to competitors with more reliable sorting</li>
+                </ul>
+
+                <h3>Evidence</h3>
+                <div style="margin: 20px 0;">
+                    <p><strong>Screenshot: Search results sorted by "Price: Low to High" showing incorrect order</strong></p>
+                    <img src="../screenshots/bug_2_sort_issue.png" alt="Price sort showing products out of order" style="max-width: 100%; height: auto; border: 1px solid #ccc; margin-bottom: 20px;">
+                    <p><em>URL contains s=price-asc-rank parameter, confirming sort was applied, but products are not in ascending price order</em></p>
+                </div>
+
+                <h3>Root Cause Analysis</h3>
+                <p>Possible explanations for this behavior:</p>
+                <ul>
+                    <li><strong>Sponsored Products:</strong> Amazon may be prioritizing sponsored/promoted products regardless of price</li>
+                    <li><strong>Complex Algorithm:</strong> Sort may factor in total cost (price + shipping), Prime eligibility, seller reputation, or product relevance</li>
+                    <li><strong>Business Decision:</strong> May be intentional to balance user experience with revenue from sponsored placements</li>
+                </ul>
+
+                <h3>Suggested Fix</h3>
+                <p><strong>Option 1 (Recommended):</strong> Implement strict price-based sorting that displays products in exact ascending order by displayed price. Sponsored products can still be marked as "Sponsored" but should respect the sort order.</p>
+                
+                <p><strong>Option 2:</strong> If sponsored products must appear out of order, clearly indicate this to users with messaging like: "Sponsored products may appear in different order" or visually separate sponsored items from organic results.</p>
+                
+                <p><strong>Option 3:</strong> Rename the sort option to be more accurate, e.g., "Price: Low to High (with featured items)" to set proper expectations.</p>
+
+                <h3>Additional Notes</h3>
+                <p>This issue is classified as a <strong>Usability Issue</strong> rather than a functional bug, as the sort functionality technically works (URL parameter is applied), but the user-facing behavior does not match user expectations. This requires product/UX team review to determine if the current behavior is intentional and acceptable, or if it should be changed to improve user experience.</p>
+                
+                <p>Similar issues may exist with other sort options (Price: High to Low, Customer Reviews, etc.) and should be investigated.</p>
+            </div>
+
             <h2>Defect Summary</h2>
             
             <div class="card">
-                <p>During testing of Amazon's product search functionality, <strong>1 defect</strong> was discovered and documented below.</p>
+                <p>During testing of Amazon's product search functionality, <strong>2 defects</strong> were discovered and documented below.</p>
                 
                 <h3>Bug Statistics</h3>
                 <table>
@@ -182,8 +315,8 @@
                         </tr>
                         <tr>
                             <td><span class="badge badge-medium">Medium</span></td>
-                            <td>1</td>
-                            <td>Open</td>
+                            <td>2</td>
+                            <td>Open (2)</td>
                         </tr>
                         <tr>
                             <td><span class="badge badge-low">Low</span></td>
