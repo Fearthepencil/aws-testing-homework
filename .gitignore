@@ -48,7 +48,8 @@ Thumbs.db
 *.log
 logs/
 
-# Screenshots (keep folder, ignore contents except .gitkeep)
+# Screenshots - only include bug evidence
 screenshots/*
 !screenshots/.gitkeep
+!screenshots/bug_*.png
 
