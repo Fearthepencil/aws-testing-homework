@@ -18,8 +18,7 @@ aws-testing-homework/
 │   ├── test-cases.html       # 17 test cases (BDD format)
 │   ├── bug-report.html       # 3 defects with screenshots
 │   ├── test-execution-report.html  # Test results summary
-│   ├── test-data.html        # Test data documentation
-│   └── exploratory-sessions.html   # Exploratory testing notes
+│   └── test-data.html        # Test data documentation
 ├── tests/                     # Automated test suite (9 tests)
 │   ├── conftest.py           # Pytest fixtures
 │   ├── test_search.py        # TC-001, TC-002
