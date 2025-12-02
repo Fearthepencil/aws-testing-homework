@@ -18,6 +18,7 @@ aws-testing-homework/
 │   ├── test-cases.html       # 17 test cases (BDD format)
 │   ├── bug-report.html       # 3 defects with screenshots
 │   ├── test-execution-report.html  # Test results summary
+│   ├──  screenshots/         # Bug evidence screenshots
 │   └── test-data.html        # Test data documentation
 ├── tests/                     # Automated test suite (9 tests)
 │   ├── conftest.py           # Pytest fixtures
@@ -37,7 +38,7 @@ aws-testing-homework/
 │   └── logger.py             # Loguru configuration
 ├── test_data/                 # Test data files
 │   └── search_terms.json
-├── screenshots/               # Bug evidence screenshots
+├── screenshots/               # Test screenshots
 ├── requirements.txt           # Python dependencies
 ├── pytest.ini                # Pytest configuration
 └── README.md                 # This file
